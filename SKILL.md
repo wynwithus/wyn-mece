@@ -1,4 +1,5 @@
 ---
+license: MIT (retain Nick Cybela's copyright notice; see LICENSE and TERMS.md)
 name: wyn-mece
 description: Make a plan easier to follow. Find missing steps, combine repeated tasks, and spell out who does what. Try it on a checklist, a business plan, or an answer from ChatGPT.
 metadata:

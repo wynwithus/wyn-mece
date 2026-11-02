@@ -54,4 +54,10 @@ python -m unittest discover -s tests -v
 
 The original evaluation runner includes 24 activation cases and 18 output cases. It needs a client adapter to measure model behavior. [Release validation](RELEASE_VALIDATION.md) records what was checked; compatibility with the file format does not establish tested behavior in every app.
 
-Free from [WYN](https://wynwithus.com), under the [MIT License](LICENSE).
+## Rights and attribution
+
+You may **fork, improve, reuse, and share** WYN MECE, including commercially, under the [MIT License](LICENSE).
+
+**You must credit Nick Cybela** by retaining his copyright notice and the full MIT permission notice in all copies or substantial portions of the skill, including modified versions. Keep other applicable copyright notices too. See [TERMS.md](TERMS.md) for the reuse and attribution details.
+
+Package 3.2.4 adds explicit reuse and attribution terms, names Nick Cybela in the copyright notice, and includes those terms in the downloads. The skill instruction body and original supporting resources are unchanged.

@@ -4,6 +4,7 @@ Use the SKILL.md instructions below for my requests in this conversation. The re
 
 ===== FILE: SKILL.md =====
 ---
+license: MIT (retain Nick Cybela's copyright notice; see LICENSE and TERMS.md)
 name: wyn-mece
 description: Make a plan easier to follow. Find missing steps, combine repeated tasks, and spell out who does what. Try it on a checklist, a business plan, or an answer from ChatGPT.
 metadata:
@@ -280,6 +281,61 @@ Do not lead with a generic definition, progress checklist, long rubric, or proce
 A framework is MECE-ready when every applicable sibling set uses one governing logic, known overlap and gaps are resolved or disclosed, each operational path is testable where required, and the output supports the stated decision without overstating evidence or exhaustiveness.
 
 ===== END FILE: SKILL.md =====
+
+===== FILE: TERMS.md =====
+# Rights and attribution
+
+WYN MECE was created by [Nick Cybela](https://wynwithus.com/authors/nick-cybela/) and is shared through WYN under the [MIT License](LICENSE).
+
+## What you may do
+
+You may use, copy, fork, improve, modify, merge, publish, distribute, sublicense, and sell this skill and its supporting files, including for commercial use.
+
+## Credit you must keep
+
+You must credit Nick Cybela by retaining the following copyright notice and the full MIT permission notice in all copies or substantial portions of this skill, including modified versions:
+
+> Copyright (c) 2026 Nick Cybela
+
+Keep all other applicable copyright and permission notices too. Include [LICENSE](LICENSE) when sharing a fork, modified skill, or package. If you reuse substantial portions in another format, include the applicable notices with those portions, such as in the accompanying documentation or bundled licenses.
+
+For a README or credits page, you can use:
+
+> Based on WYN MECE by Nick Cybela (WYN): https://github.com/wynwithus/wyn-mece. Used under the MIT License.
+
+That credit line does not replace the copyright and permission notices required by the license.
+
+## License and warranty
+
+This page explains the existing MIT License; it adds no further license restrictions. The full grant of rights, notice requirements, and warranty disclaimer are in [LICENSE](LICENSE). The skill is provided as is, without warranties or guarantees.
+
+===== END FILE: TERMS.md =====
+
+===== FILE: LICENSE =====
+MIT License
+
+Copyright (c) 2026 Nick Cybela
+Copyright (c) 2026 WYN Solutions
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+===== END FILE: LICENSE =====
 
 ===== FILE: references/archetypes.md =====
 # Structural Archetypes and Correct MECE Tests

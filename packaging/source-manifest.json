@@ -2,11 +2,12 @@
   "source_skill_name": "mece",
   "source_skill_version": "3.2.0",
   "package_name": "wyn-mece",
-  "package_version": "3.2.3",
+  "package_version": "3.2.4",
   "permitted_differences": [
     "SKILL.md frontmatter.name",
     "SKILL.md frontmatter.description",
-    "agents/openai.yaml display name, short description, and invocation example"
+    "agents/openai.yaml display name, short description, and invocation example",
+    "SKILL.md frontmatter.license (MIT attribution notice; instruction body unchanged)"
   ],
   "normalization": "Text SHA-256 values use UTF-8 and LF newlines; image values use original bytes.",
   "source_body_sha256": "172b84cc4e27898d08f5f607e8881284deff9071a716f0bcb511384801360b18",

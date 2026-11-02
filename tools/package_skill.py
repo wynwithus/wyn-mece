@@ -7,12 +7,12 @@ import zipfile
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PACKAGE_VERSION = "3.2.3"
+PACKAGE_VERSION = "3.2.4"
 RESOURCE_DIRS = ("agents", "assets", "evals", "references", "scripts")
 
 
 def skill_files():
-    files = [ROOT / "SKILL.md", ROOT / "LICENSE", ROOT / "CHANGELOG.md"]
+    files = [ROOT / "SKILL.md", ROOT / "LICENSE", ROOT / "TERMS.md", ROOT / "CHANGELOG.md"]
     for directory in RESOURCE_DIRS:
         files.extend(path for path in (ROOT / directory).rglob("*")
                      if path.is_file() and "__pycache__" not in path.parts
@@ -22,7 +22,7 @@ def skill_files():
 
 
 def make_text_bundle():
-    paths = [ROOT / "SKILL.md"]
+    paths = [ROOT / "SKILL.md", ROOT / "TERMS.md", ROOT / "LICENSE"]
     for directory in ("references", "assets", "scripts"):
         paths.extend(path for path in (ROOT / directory).rglob("*")
                      if path.is_file() and path.suffix in {".md", ".yaml", ".py"}

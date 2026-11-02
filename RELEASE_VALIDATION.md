@@ -1,3 +1,7 @@
+# WYN MECE package 3.2.4
+
+Rights update checked November 2, 2026. Adds Nick Cybela's copyright notice, explicit rights and attribution terms, and a license field in SKILL.md. Includes TERMS and LICENSE in the installable package and the text export. The original instruction-body and supporting-file hashes remain unchanged. The frontmatter preservation check now also permits the added license field; all other preserved metadata is unchanged.
+
 # WYN MECE package 3.2.3
 
 Description update checked November 1, 2026. The description and public examples now explain the skill in everyday language. The original instruction-body and supporting-file preservation checks still apply.

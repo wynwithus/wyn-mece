@@ -39,7 +39,7 @@ class DistributionTests(unittest.TestCase):
         manifest = json.loads((ROOT / "packaging/source-manifest.json").read_text(encoding="utf-8"))
         frontmatter = (ROOT / "SKILL.md").read_text(encoding="utf-8").split("---", 2)[1]
         preserved = "\n".join(line for line in frontmatter.splitlines()
-                              if not line.startswith(("name:", "description:")))
+                              if not line.startswith(("name:", "description:", "license:")))
         self.assertEqual(preserved, manifest["preserved_frontmatter"])
 
     def test_description_fits_documented_upload_limit(self):
