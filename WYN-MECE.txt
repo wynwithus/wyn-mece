@@ -1,0 +1,2537 @@
+WYN MECE
+
+Use the SKILL.md instructions below for my requests in this conversation. The remaining file sections contain its referenced resources.
+
+===== FILE: SKILL.md =====
+---
+name: wyn-mece
+description: Find gaps, overlap, double-counting, and unclear ownership in plans and frameworks. Use for "make this MECE", issue trees, categories, workflows, or testable completion criteria.
+metadata:
+  author: WynWithUs
+  version: "3.2.0"
+---
+# MECE Framework and Materials Engineering
+
+## Objective
+
+Turn a request or source artifact into a decision-ready structure that is logically sound, source-grounded, operational where required, and MECE at every applicable sibling set.
+
+MECE is a validation method, not a formatting style. The validity rule depends on the structural archetype.
+
+## Literal definitions
+
+Apply both tests to one sibling set against its parent and under the selected archetype:
+
+- **Mutually exclusive (ME):** siblings do not double-count the applicable unit, claim, responsibility, state, path, or contribution under that archetype's validity rule.
+- **Collectively exhaustive (CE):** siblings cover the defined parent and in-scope universe to the stated proof strength.
+- ME and CE are independent. A sibling set may pass one and fail the other.
+- For bounded partitions and exclusive decision predicates, ME and CE combine into the **exact-one test:** every in-scope item maps to exactly one valid category or branch.
+
+Do not turn these definitions into one universal membership test. Definitions of Done are normally conjunctive, causal models may contain interactions and feedback, workflows may contain explicit parallel work, and ownership models may have multiple contributors while retaining one accountable owner.
+
+## Core standard
+
+1. **Select the archetype before applying a test.** A partition, issue tree, workflow, Definition of Done, decision tree, ownership model, matrix, causal model, and narrative do not share one membership rule.
+2. **Apply MECE locally.** Test each sibling set against its parent. Use exact-one classification only for bounded partitions and decision predicates that require it.
+3. **Preserve provenance.** Mark material content as `SOURCE`, `DERIVED`, `ASSUMPTION`, or `OPEN`.
+4. **State proof strength honestly.** Label collective exhaustiveness `PROVEN`, `SUPPORTED`, `ASSUMED`, or `NOT_ESTABLISHED`.
+5. **Use one basis per sibling set.** Put a second basis on another level or axis.
+6. **Make execution observable.** Add owners, evidence, thresholds, transitions, exceptions, and failure actions only where the archetype and decision require them.
+7. **Lead with the answer.** Put the governing thought, verdict, or finished artifact before the audit trail.
+8. **Scale the ceremony to the task.** Do not expose progress checklists, complete ledgers, or full rubrics unless they contain material findings, the user requests an audit trail, the decision is high-stakes, or another system needs the handoff.
+9. **Validate every framework, including your own.** Never deliver an unevaluated build or repair.
+
+## Routing
+
+Choose exactly one primary mode:
+
+| Primary mode | Use when | Required result |
+|---|---|---|
+| `EVALUATE` | An artifact exists and the user wants a judgment | Verdict, material defects, evidence, minimum fixes |
+| `REPAIR` | An artifact exists and the user wants it corrected | Diagnosis, repaired artifact, change log, validation |
+| `CREATE` | No adequate artifact exists and the user wants one built | Scope, completed framework, validation, assumptions |
+
+Add zero or more modifiers:
+
+- `RECONSTRUCT`: interpret a screenshot or diagram before evaluation or repair.
+- `OPERATIONALIZE`: add evidence, thresholds, owners, state transitions, exceptions, or failure actions.
+- `PREPARE_ARTIFACT_HANDOFF`: preserve the approved content architecture for a document, deck, spreadsheet, or diagram renderer.
+
+If intent is ambiguous between `EVALUATE` and `REPAIR`, evaluate first and include the smallest repair required. Do not force a user-visible routing discussion when the intended result is evident.
+
+## Workflow
+
+### 1. Deconstruct the input
+
+For text, notes, lists, or drafts:
+
+1. Separate requested deliverable requirements from source content.
+2. Split compound statements into atomic items: one object, claim, action, condition, state, or criterion.
+3. Assign source IDs such as `T1`, `T2`, and `T3`.
+4. Preserve source labels verbatim when meaning is uncertain.
+5. Surface contradictions across sources instead of silently choosing one.
+
+For screenshots or diagrams:
+
+1. Inspect the image natively before using OCR or guessing.
+2. Transcribe visible labels, annotations, and legends verbatim; mark illegible text `[unreadable]`.
+3. Build a visual evidence ledger with `ID`, literal text, container or shape, relative position, connector, direction, style cue, and confidence.
+4. Identify visual grammar: hierarchy, flow, matrix, timeline, swimlane, overlap, dashboard, or mixed layout.
+5. Distinguish visible evidence from inferred structural meaning.
+6. Trace every reconstructed element to a visual source ID or label it `DERIVED` or `ASSUMPTION`.
+
+Read [references/intake-and-screenshot.md](references/intake-and-screenshot.md) when the source is visual, sparse, contradictory, cropped, or low-confidence.
+
+### 2. Establish the scope contract
+
+Define or infer:
+
+```text
+decision = choice or action the output must support
+audience = consumer, approver, or operator
+deliverable = tree, taxonomy, workflow, DoD, matrix, deck outline, etc.
+U = bounded universe, when one exists
+x = atomic unit being classified, decomposed, sequenced, or tested
+parent = governing question, claim, outcome, state, or gate
+B = basis of division for the current sibling set
+purpose = why the structure exists
+scenario = operating context, time horizon, geography, and constraints
+evidence = proof required for claims, assignment, or completion
+depth = required decomposition level
+exclusions = explicitly out-of-scope items
+```
+
+Use this clarification gate:
+
+1. Ask only when a different answer could materially change the archetype, parent, scope, unit, basis, acceptance test, or recommendation.
+2. Ask at most four questions in the initial batch.
+3. Give a proposed default with each question so the user can confirm or replace it.
+4. Prefer boundary, forced-choice, and evidence questions over broad requests for context.
+5. Use one targeted follow-up only if the first answers reveal a new contradiction or materially different archetype.
+6. Proceed with labeled, reversible assumptions when uncertainty is minor or the user directs you to continue.
+
+High-information questions:
+
+- **Decision:** “Should this diagnose causes, assign entities, govern execution, or define completion? Default: [best-supported option].”
+- **Boundary:** “Is [edge case] in scope? Default: [include/exclude] because [source evidence].”
+- **Unit:** “Should one leaf represent a cause, task, deliverable, owner, or record? Default: [unit].”
+- **Evidence:** “What proof makes a branch or gate acceptable? Default: [observable test].”
+
+### 3. Select the structural archetype
+
+| Archetype | Atomic unit | Core validity rule |
+|---|---|---|
+| Partition / taxonomy / segmentation | entity or record | each in-scope item maps to exactly one category |
+| Issue tree / problem decomposition | sub-question, driver, or hypothesis | siblings are distinct and together answer the parent |
+| Workflow / lifecycle / execution plan | state, transition, work item, or deliverable | entry, order, exit, dependencies, exceptions, and terminal states are complete |
+| Definition of Done / gate model | completion criterion | required criteria are atomic, distinct, observable, and conjunctively satisfied |
+| Decision tree | case at a decision node | exactly one branch predicate is true at that node |
+| Responsibility / ownership model | decision, task, or deliverable | exactly one accountable owner where accountability is required; contributors may be plural |
+| Matrix / portfolio | cell intersection | each axis is independently MECE; unknowns and empty cells are handled explicitly |
+| Causal / system model | factor, mechanism, interaction, or feedback loop | factors are distinct; interactions and feedback are represented rather than forced into exclusivity |
+| Narrative / deck / document architecture | supporting idea | siblings are logically alike and collectively support the governing thought |
+
+Read [references/archetypes.md](references/archetypes.md) before constructing a high-stakes, hybrid, or unfamiliar structure.
+
+### 4. Construct or repair the architecture
+
+For every parent, stage, gate, or axis:
+
+1. Express the parent as a question, claim, outcome, state, or acceptance condition.
+2. Choose one basis of division `B`.
+3. Create the fewest siblings needed for decision usefulness; normally favor 3–5 at a communication level, without forcing the count.
+4. Keep siblings at the same abstraction level and of the same logical kind.
+5. Define inclusion, exclusion, predicate, entry/exit, or acceptance rules appropriate to the archetype.
+6. Map source items to leaves or identify new material as `DERIVED`, `ASSUMPTION`, or `OPEN`.
+7. Resolve null, unknown, mixed, transitional, failed, waived, and exceptional cases.
+8. Bound any residual with an inclusion rule, accountable review owner, trigger, and closure path.
+9. Order siblings by one governing relation: logical implication, chronological sequence, structural arrangement, comparative rank, or causal/dependency relation. State the specific rule used. Apply predecessor and blocker tests only to execution or dependency sequences.
+10. Preserve legitimate interactions, parallel work, shared contributors, and feedback loops instead of creating artificial exclusivity.
+
+Repair mixed basis before moving individual items. Convert vague verbs such as “optimize,” “align,” “ensure,” “support,” “review,” and “manage” into observable tests or remove them.
+
+Read [references/construction-patterns.md](references/construction-patterns.md) when choosing a basis, repairing mixed logic, bounding a residual, or converting vague material into observable form.
+
+### 5. Run applicable checks
+
+Use four statuses:
+
+```text
+TRUE = requirement is satisfied with evidence
+FALSE = requirement is contradicted or materially deficient
+NOT_APPLICABLE = the archetype or decision does not require it
+NOT_ESTABLISHED = evidence is insufficient to judge
+```
+
+Run the compact checks in [references/check-catalog.md](references/check-catalog.md). At minimum verify:
+
+- scope, parent, unit, archetype, basis, and provenance;
+- vertical logic and same-level horizontal logic;
+- the archetype-specific overlap test;
+- coverage, edge cases, and residual handling;
+- observability, evidence, thresholds, ownership, transitions, and failure handling where applicable;
+- decision usefulness and output proportionality.
+
+For finite partitions and decision predicates, run the exact-one test:
+
+```text
+for each x in bounded U:
+  n = count(valid categories or predicates containing x)
+  n = 0  -> gap
+  n = 1  -> pass
+  n >= 2 -> overlap
+```
+
+A parent containing its child is decomposition, not overlap. A Definition of Done is normally a conjunction of required criteria, not a partition of the completed object. A causal system may contain cross-branch interactions.
+
+When `U` and assignments are finite, use `scripts/validate_partition.py` to detect gaps, overlaps, duplicate assignments, and unknown items. For numeric bands, use its `intervals` input to test explicit endpoints, pairwise disjointness, domain coverage, missing-data routing, and supplied value assignments.
+
+### 6. Grade, repair, and stop
+
+Use evidence-led gates before numerical scores.
+
+Critical gates:
+
+```text
+G1 correct structural archetype and governing parent
+G2 material source meaning preserved or changes disclosed
+G3 every top-level sibling supports or answers its parent
+G4 no known material overlap, gap, exception, or interaction is concealed
+G5 collective-exhaustiveness and confidence claims are not overstated
+G6 operational criteria are testable where execution is requested
+```
+
+Compute:
+
+```text
+READINESS_SCORE = 100 * passed applicable weight / total applicable weight
+CONFIDENCE = minimum(source_confidence, archetype_confidence, coverage_confidence)
+```
+
+`READINESS_SCORE` summarizes rubric compliance. It is not confidence.
+
+Verdicts:
+
+```text
+PASS = all critical gates pass AND readiness >= 90 AND confidence >= 90
+CONDITIONAL_PASS = all critical gates pass AND only disclosed, non-blocking assumptions remain
+FAIL = any critical gate fails or a material structural defect remains
+```
+
+For routine work, use one compact applicable-check pass. For high-stakes materials, read [references/output-rubric.md](references/output-rubric.md) and run the Minto and MECE-operational graders.
+
+- Use isolated subagents or fresh contexts when available.
+- Otherwise run two blinded rubric passes and label them `QUASI_INDEPENDENT`; do not claim true independence.
+- Freeze both initial results before reconciliation.
+- Treat scores as summaries of evidence, not targets to be raised.
+- Repair the highest-impact supported failure first.
+- Run at most three internal repair passes.
+- Stop earlier when all gates pass, the required threshold is reached, or missing source evidence blocks further improvement.
+- Never manufacture evidence, certainty, or a passing score.
+
+### 7. Deliver answer-first
+
+Read [references/output-contracts.md](references/output-contracts.md) and choose the smallest contract that supports the decision.
+Read [references/examples.md](references/examples.md) only when a rendered pattern is unclear.
+
+Default order:
+
+1. governing thought, finished framework, or verdict;
+2. key-line support or highest-impact defects;
+3. repaired or created artifact;
+4. material failures with minimum fixes;
+5. assumptions and open questions;
+6. validation summary.
+
+For each material failure, report:
+
+```text
+failed_check:
+status:
+evidence:
+root_causes: []
+why_it_matters:
+minimum_fix_required:
+revised_wording_or_rule:
+```
+
+Root causes and failed checks are many-to-many. Do not force one failure type per check.
+
+Output density:
+
+- `EVALUATE`: show the verdict and material failed or not-established checks; provide the full applicable scorecard only when requested or high-stakes.
+- `REPAIR` and `CREATE`: compress passes to one line and expand failures, assumptions, and edge cases.
+- `RECONSTRUCT`: show literal source recovery and uncertain interpretations before presenting derived repairs.
+- `PREPARE_ARTIFACT_HANDOFF`: include a machine-readable handoff that preserves hierarchy, evidence, assumptions, CE status, readiness, and confidence.
+
+Do not lead with a generic definition, progress checklist, long rubric, or procedural narration.
+
+## Failure handling
+
+- **Unreadable screenshot:** identify load-bearing unreadable regions, request a higher-resolution crop when necessary, and continue only with legible content plus labeled uncertainty.
+- **Contradictory sources:** preserve both claims, identify the conflict, and state which source or assumption governs each provisional branch.
+- **Unbounded universe:** provide a bounded hypothesis structure and label CE `ASSUMED`, `SUPPORTED`, or `NOT_ESTABLISHED`.
+- **Mixed structures:** separate them into levels, axes, or linked artifacts.
+- **Missing evidence:** deliver the strongest supported version with the blocking evidence named; do not infer a pass.
+- **Style-only request:** do not invoke this skill unless structural completeness, exclusivity, sequencing, or operability is part of the job.
+
+## Single-line standard
+
+A framework is MECE-ready when every applicable sibling set uses one governing logic, known overlap and gaps are resolved or disclosed, each operational path is testable where required, and the output supports the stated decision without overstating evidence or exhaustiveness.
+
+===== END FILE: SKILL.md =====
+
+===== FILE: references/archetypes.md =====
+# Structural Archetypes and Correct MECE Tests
+
+MECE is evaluated differently by structure type. Select the archetype before applying a validator.
+
+## 1. Partition, taxonomy, or segmentation
+
+### Purpose
+
+Assign each entity in a bounded universe to one category.
+
+### Formal rule
+
+```text
+For every x in U:
+  category_count(x) = 1
+```
+
+### Required fields
+
+- bounded universe `U`;
+- atomic entity `x`;
+- category set `C`;
+- inclusion and exclusion rules;
+- boundary handling;
+- residual policy.
+
+### Pass tests
+
+- Every item maps to exactly one category.
+- Category definitions use one basis at each level.
+- Numeric intervals specify inclusive and exclusive endpoints.
+- Null, unknown, mixed, and not-applicable cases have explicit rules.
+- Reclassification over time is handled by an “as-of” date or state rule.
+
+### Deterministic numeric-band check
+
+Use `scripts/validate_partition.py` with an `intervals` object when a one-dimensional numeric segmentation needs mechanically verified endpoints and coverage:
+
+```json
+{
+  "intervals": {
+    "domain": {"min": 0, "max": null},
+    "bands": [
+      {"name": "lower", "min": 0, "min_inclusive": true, "max": 100, "max_inclusive": false},
+      {"name": "upper", "min": 100, "min_inclusive": true, "max": null}
+    ],
+    "values": {"known-item": 100, "unknown-item": null},
+    "missing_data_category": "unknown"
+  }
+}
+```
+
+`null` endpoints are unbounded and must not carry inclusivity flags. Every finite endpoint requires an explicit Boolean inclusivity flag. A strict pass proves the supplied band geometry and value routing only; it does not prove that the domain, measurement unit, as-of rule, or segmentation basis is correct or useful.
+
+### Common failures
+
+- Geography mixed with customer size.
+- Current status mixed with historical behavior.
+- A customer qualifies for two personas.
+- “Other” absorbs unexamined volume.
+
+## 2. Issue tree or problem decomposition
+
+### Purpose
+
+Break a governing question into distinct sub-questions or drivers that together resolve it.
+
+### Formal rule
+
+For each parent question `P` with children `Q1…Qn`:
+
+```text
+vertical_valid = answers(Q1…Qn) are sufficient to answer P
+horizontal_valid = Qi are logically distinct and use one basis
+```
+
+Exact-one assignment of real-world events is not required unless the leaves are also a partition.
+
+### Pass tests
+
+- Every child is phrased as the same logical type: question, driver, or hypothesis.
+- No child is merely a restatement of the parent.
+- The same driver is not counted under multiple branches.
+- Interactions are isolated as a separate term, bridge, or sensitivity.
+- The tree terminates at answerable, testable leaves.
+
+### Common failures
+
+- Symptoms mixed with causes.
+- Levers mixed with constraints.
+- Revenue drivers mixed with implementation actions.
+- A branch called “market” and another called “customer demand.”
+- Causal interaction hidden to preserve artificial exclusivity.
+
+## 3. Workflow, lifecycle, or execution plan
+
+### Purpose
+
+Define how work or an entity moves through ordered states or activities.
+
+### Core rule
+
+MECE applies to current states and transition logic, while sequence validity applies to steps.
+
+```text
+state_partition_valid = each active case has one current state, unless parallel states are explicitly allowed
+transition_valid = every state has defined valid next states, exit, and exception handling
+```
+
+### Required fields
+
+- trigger or entry condition;
+- state or stage names;
+- owner;
+- inputs and outputs;
+- dependencies;
+- exit criteria;
+- exception, retry, rollback, and failure paths;
+- terminal states.
+
+### Pass tests
+
+- Stages are states or activities, not a mixture.
+- Each work item has an unambiguous current state.
+- Parallel work is represented as parallel lanes, not forced into one stage.
+- Failed, cancelled, paused, and reopened cases are covered.
+- Handoffs specify who owns the item before and after transition.
+
+### Common failures
+
+- “Review” is both a stage and an action inside every stage.
+- A process jumps from input to output without validation.
+- Exception handling is omitted.
+- Milestones and departments are mixed as sibling stages.
+
+## 4. Definition of Done or gate model
+
+### Purpose
+
+Define a conjunction of completion requirements.
+
+### Formal rule
+
+```text
+DONE = criterion_1 AND criterion_2 AND ... AND criterion_n
+```
+
+The criteria do not classify the same item; exact-one is therefore not the core test. MECE means each requirement appears once, is placed under one gate, and the full set covers the intended acceptance state.
+
+### Required fields
+
+- criterion;
+- observable evidence;
+- binary or explicitly multi-state test;
+- threshold;
+- accountable approver or owner;
+- failure action;
+- timing or validity window where relevant.
+
+### Pass tests
+
+- Criteria are observable and testable.
+- Vague verbs are paired with evidence and thresholds.
+- No criterion duplicates another in different words.
+- The set covers functional, quality, compliance, operational, and handoff requirements that are in scope.
+- Waivers have an owner, reason, expiry, and approval path.
+
+### Common failures
+
+- “Team aligned.”
+- “Tracking works.”
+- One criterion contains several independent tests.
+- Owner and approver are conflated.
+- Evidence is unavailable until after launch.
+
+## 5. Decision tree
+
+### Purpose
+
+Route one case through predicates to one outcome or next action.
+
+### Formal rule
+
+At every decision node:
+
+```text
+exactly_one(branch_predicate) = TRUE
+```
+
+### Pass tests
+
+- Predicates are mutually exclusive at the same point in time.
+- Predicates cover null, unknown, timeout, and error states.
+- Branch labels are executable tests, not subjective adjectives.
+- Terminal outcomes are explicit.
+- No branch depends on information unavailable at that node.
+
+### Common failures
+
+- “High value” and “strategic” overlap.
+- No branch for missing data.
+- A yes/no node includes a third “maybe” path without redefining the predicate.
+
+## 6. Responsibility or ownership model
+
+### Purpose
+
+Assign decision rights and work ownership.
+
+### Core rule
+
+```text
+accountable_owner_count(task_or_decision) = 1
+```
+
+Multiple responsible contributors, consulted parties, or informed parties may be valid when roles are explicit.
+
+### Pass tests
+
+- Every task, decision, or deliverable has one accountable owner.
+- Responsibility, accountability, approval, consultation, and execution are distinguished.
+- Shared work has a named integrator or final decision owner.
+- Escalation and absence coverage are explicit.
+- No orphaned tasks or duplicated accountability.
+
+### Common failures
+
+- “Marketing and Sales” as joint accountable owner.
+- A department named as owner with no role or decision right.
+- Contributor lists mistaken for ownership.
+
+## 7. Matrix or portfolio model
+
+### Purpose
+
+Classify or compare items along two independent axes.
+
+### Formal rule
+
+```text
+row_axis is MECE
+AND column_axis is MECE
+AND each item maps to one row × one column for the stated time/state
+```
+
+### Pass tests
+
+- Axes use distinct dimensions.
+- Each axis has clear boundaries.
+- The intersection meaning is defined.
+- Empty cells are allowed and interpreted.
+- The matrix does not disguise a third uncontrolled dimension.
+
+### Common failures
+
+- One axis is size and the other is “enterprise,” which already implies size.
+- Quadrant labels replace objective axis definitions.
+- Items move across cells without an as-of rule.
+
+## 8. Causal or system model
+
+### Purpose
+
+Represent factors, mechanisms, interactions, feedback loops, and outcomes.
+
+### Core rule
+
+Factors should be distinct at each sibling set, while interactions are modeled explicitly.
+
+```text
+outcome = main_effects + interaction_effects + feedback + exogenous_factors
+```
+
+The formula may be conceptual rather than numeric.
+
+### Pass tests
+
+- Causes, mechanisms, moderators, outcomes, and symptoms are separated.
+- Interactions have their own links or terms.
+- Feedback loops are visible.
+- Temporal direction is explicit.
+- Exogenous or unknown factors are bounded.
+- Double counting is prevented in quantification.
+
+### Common failures
+
+- Treating correlated factors as exclusive categories.
+- Placing an outcome beside its causes.
+- Omitting feedback because it breaks a tree layout.
+- Calling a causal inventory “proven exhaustive” without a closed theory or bounded model.
+
+## 9. Narrative, slide deck, or document outline
+
+### Purpose
+
+Communicate a governing thought through grouped support.
+
+### Core rule
+
+```text
+governing_thought is supported by key_line_points
+AND each sibling group is logically alike, ordered, and sufficient for its parent
+```
+
+### Pass tests
+
+- The answer or recommendation appears first.
+- Section titles state conclusions or roles, not generic topics.
+- Each section contains one controlling idea.
+- Supporting points answer the question raised by their parent.
+- Detail descends by evidence and implication.
+- Appendices hold useful detail that is not needed for the core decision.
+
+### Common failures
+
+- Topic-first titles such as “Market Overview.”
+- Chronological research notes presented as the final story.
+- Recommendations mixed with evidence at the same level.
+- Repeated facts under several sections.
+
+## 10. Hybrid structures
+
+Use linked structures when one artifact cannot legitimately carry all logic.
+
+Examples:
+
+- Issue tree for diagnosis → prioritization matrix → execution roadmap.
+- Customer segmentation → segment-specific journey workflows.
+- Causal model → intervention decision tree → Definition of Done.
+- Ownership matrix → workflow with handoffs.
+
+Rules:
+
+1. Name the role of each structure.
+2. Define the handoff unit between them.
+3. Keep each structure internally valid.
+4. Do not merge different bases into one sibling list.
+5. Re-run traceability across the full chain.
+
+===== END FILE: references/archetypes.md =====
+
+===== FILE: references/check-catalog.md =====
+# Applicable Check Catalog
+
+Use this catalog for routine validation. Mark each check `TRUE`, `FALSE`, `NOT_APPLICABLE`, or `NOT_ESTABLISHED`. Score only applicable checks. A critical-gate failure overrides the weighted score.
+
+## Status rules
+
+- `TRUE`: satisfied with cited or observable evidence.
+- `FALSE`: contradicted or materially deficient.
+- `NOT_APPLICABLE`: the selected archetype or decision does not require the check.
+- `NOT_ESTABLISHED`: relevant, but available evidence is insufficient.
+
+`NOT_ESTABLISHED` is not a pass. Resolve it, disclose it as a non-blocking assumption, or fail the relevant gate.
+
+## Scope and interpretation checks
+
+| ID | Check | Weight | TRUE when |
+|---|---|---:|---|
+| C1 | governing_parent_defined | 6 | The governing question, claim, outcome, state, or acceptance condition is explicit. |
+| C2 | decision_and_audience_defined | 5 | The decision or action and intended consumer are explicit or safely assumed. |
+| C3 | scope_and_exclusions_defined | 5 | In-scope and out-of-scope boundaries are explicit enough to test coverage. |
+| C4 | atomic_unit_defined | 5 | One leaf, row, record, criterion, state, or factor has a clear meaning. |
+| C5 | archetype_correct | 8 | The selected archetype matches the logic the artifact must represent. |
+| C6 | basis_defined | 5 | The organizing logic for each sibling set or axis is stated or unambiguous. |
+| C7 | provenance_preserved | 6 | Material content is tagged or traceable as source, derivation, assumption, or open question. |
+| C8 | ambiguity_controlled | 5 | Material uncertainty is resolved through high-information questions or reversible assumptions. |
+
+## Structural checks
+
+| ID | Check | Weight | TRUE when |
+|---|---|---:|---|
+| S1 | elements_defined | 5 | Categories, branches, stages, predicates, criteria, axes, or factors have explicit rules or meanings. |
+| S2 | vertical_logic | 7 | Every child answers, supports, causes, executes, or completes its parent. |
+| S3 | same_basis_and_level | 7 | Siblings use one basis and one abstraction level. |
+| S4 | applicable_overlap_test | 8 | The archetype-specific exclusivity or duplication test passes, including boundary and compound cases. |
+| S5 | coverage_established | 8 | Coverage uses the strongest available proof method and the CE status is justified. |
+| S6 | edge_cases_resolved | 6 | Null, unknown, mixed, transitional, waived, failed, and exceptional cases are assigned or disclosed. |
+| S7 | residual_bounded | 4 | Any residual has an inclusion rule, review trigger, accountable owner where needed, and closure path. |
+| S8 | order_and_sequence_valid | 4 | The logical order, state sequence, or causal direction is explicit and internally consistent. |
+| S9 | interactions_preserved | 5 | Legitimate cross-branch interactions, parallel work, shared contributors, or feedback loops are explicit. |
+
+## Operational checks
+
+Apply only where the decision requires execution, acceptance, ownership, or handoff.
+
+| ID | Check | Weight | TRUE when |
+|---|---|---:|---|
+| O1 | observable_and_testable | 7 | A non-author can verify each applicable criterion, predicate, state, or output. |
+| O2 | evidence_producible | 5 | Named proof is identifiable and realistically obtainable. |
+| O3 | thresholds_or_decision_rules_defined | 6 | “Good enough,” routing, or acceptance is explicit through numeric, enumerated, or evidence-based rules. |
+| O4 | accountability_valid | 6 | Exactly one accountable owner exists where accountability is required; other roles may be plural. |
+| O5 | transitions_and_dependencies_defined | 6 | Workflow entry, exit, prerequisites, joins, and handoffs are explicit where applicable. |
+| O6 | exceptions_and_failure_actions_defined | 6 | Failure, timeout, retry, rollback, waiver, pause, cancellation, and escalation paths are covered as applicable. |
+| O7 | decision_useful | 6 | A branch, classification, or pass/fail result changes an action, decision, priority, owner, or acceptance state. |
+| O8 | artifact_handoff_integrity | 4 | Rendering can preserve hierarchy, scope, basis, evidence, assumptions, and validation state. |
+| O9 | proportionality | 4 | The method and visible audit trail are no heavier than the decision requires. |
+
+## Archetype applicability guide
+
+This table supplies defaults. Override them when the user’s decision materially changes the need.
+
+| Archetype | Required structural checks | Common operational checks | Common `NOT_APPLICABLE` checks |
+|---|---|---|---|
+| Partition / taxonomy / segmentation | S1–S8 | O1–O3, O7; O4 if governed operationally | O5–O6 unless it controls a lifecycle |
+| Issue tree | S1–S6, S8–S9 | O2, O3, O7; O4 for a test plan | O5–O6 unless converted into execution |
+| Workflow / lifecycle / execution plan | S1–S9 | O1–O7 | O8 unless handed off |
+| Definition of Done / gate model | S1–S8 | O1–O4, O6–O7 | O5 unless criteria have state dependencies |
+| Decision tree | S1–S8 | O1–O3, O6–O7 | O4–O5 unless execution ownership is included |
+| Responsibility / ownership model | S1–S7 | O4, O6–O7 | O1–O3 unless acceptance criteria are included; O5 unless workflowed |
+| Matrix / portfolio | S1–S8 | O1–O3, O7 | O4–O6 unless used for governance |
+| Causal / system model | S1–S6, S8–S9 | O2–O3, O7 | O4–O6 unless converted into interventions |
+| Narrative / deck / document | S1–S6, S8–S9 | O2, O7–O9 | O1, O3–O6 unless the content governs action |
+
+## Readiness calculation
+
+```text
+applicable_weight = sum(weights for TRUE, FALSE, and NOT_ESTABLISHED checks)
+passed_weight = sum(weights for TRUE checks)
+READINESS_SCORE = 100 * passed_weight / applicable_weight
+```
+
+Do not count `NOT_APPLICABLE` in the denominator. Keep `NOT_ESTABLISHED` in the denominator so missing evidence cannot inflate readiness.
+
+## Failure record
+
+For every material `FALSE` or `NOT_ESTABLISHED` result, capture:
+
+```yaml
+failed_check: S4
+status: FALSE
+evidence: "Boundary item 100k maps to both Mid-Market and Enterprise."
+root_causes:
+  - overlapping_interval_endpoints
+  - undefined_as_of_rule
+why_it_matters: "The same account can be double-counted."
+minimum_fix_required: "Use half-open intervals and define the measurement date."
+revised_wording_or_rule: "Mid-Market: 100k <= ARR < 500k as of month-end."
+```
+
+Root causes and failed checks are many-to-many. Preserve that relationship instead of forcing a single label.
+
+===== END FILE: references/check-catalog.md =====
+
+===== FILE: references/construction-patterns.md =====
+# Construction Patterns
+
+Use this reference when selecting a basis of division, repairing mixed sibling logic, bounding a residual, or converting vague material into testable form. Archetype-specific validity rules remain in [archetypes.md](archetypes.md).
+
+## Basis-of-division catalog
+
+Choose the basis that best supports the governing decision. Use one basis per sibling set; put another basis on a lower level or a separate matrix axis.
+
+- **Formula decomposition:** an identity such as `Profit = Revenue - Cost` or `Revenue = Traffic x Conversion Rate x Average Order Value`. Strong for diagnosing a metric when the identity and units are valid.
+- **Lifecycle or state:** one current state per item at the stated time, unless parallel states are explicitly modeled. Strong for pipelines and case management.
+- **Process or activity:** work grouped by stage or activity. Strong for execution plans; distinguish activities from states and deliverables.
+- **Component or structure:** parts of a defined whole, such as regions, product lines, systems, or organizational units. Test cross-component and shared cases explicitly.
+- **Segment attribute:** one declared attribute such as size, industry, tier, or risk. If two attributes matter independently, use a matrix instead of combining them silently in labels.
+- **Decision predicate:** branches defined by executable conditions. Include null, unknown, timeout, and error cases where relevant.
+- **Causal mechanism:** factors grouped by distinct mechanisms. Preserve interaction terms, feedback, and exogenous factors rather than forcing exact-one membership.
+
+Stock frames such as internal/external, supply/demand, and people/process/tools can generate hypotheses, but they are not automatically complete or decision-useful. Validate them against the parent, scope, and evidence.
+
+## Grouping and ordering heuristics
+
+- Prefer the fewest siblings that preserve meaning and decision usefulness. Three to five often communicates well, but do not force the count or infer a defect from two or more than five alone.
+- Every sibling set should support one accurate parent summary. If the parent cannot summarize its children without adding or dropping meaning, repair the vertical logic.
+- Use one governing ordering relation: logical implication, chronological sequence, structural arrangement, comparative rank, or causal/dependency relation.
+- For an execution or dependency sequence, name prerequisites, downstream blockers, joins, and parallel work. Do not require blocker logic for a structural list, ranked comparison, or ordinary narrative grouping.
+- Treat a second classification basis as another level or axis, not as an adjective embedded in one category.
+
+## High-signal anti-patterns
+
+Flag these when they are siblings under one parent:
+
+- channels mixed with tasks;
+- outcomes mixed with inputs;
+- owners mixed with deliverables;
+- symptoms mixed with causes;
+- strategic goals mixed with execution steps;
+- states mixed with activities or milestones;
+- generic labels that differ only in tone rather than inclusion rule;
+- `Other`, `Miscellaneous`, `TBD`, `As needed`, or `Various` without a bounded rule and closure path;
+- a technically exact partition whose basis does not change any decision, action, priority, ownership, or acceptance state.
+
+## Vague-verb conversions
+
+Convert a vague statement only when the source and decision justify the added specificity. Otherwise mark the required evidence or threshold `OPEN` rather than inventing it.
+
+| Vague expression | Observable replacement pattern |
+|---|---|
+| optimize / improve | named metric, baseline, target or delta, measurement method, and date |
+| ensure | named check, evidence, threshold, and accountable owner where required |
+| align | named parties record approval or disagreement on a named artifact by a stated point |
+| support | concrete deliverable, service level, decision right, or remove the word |
+| handle / manage / coordinate | atomic actions, outputs, handoffs, and exception paths |
+| review | reviewer records an outcome against a named standard and identifies the next action |
+| ready / good / works | binary or enumerated acceptance test with producible evidence |
+
+Never manufacture thresholds, owners, evidence, or approval states merely to make wording appear operational.
+
+===== END FILE: references/construction-patterns.md =====
+
+===== FILE: references/examples.md =====
+# Worked Examples
+
+Use these only when a rendered pattern is unclear. Adapt the logic; do not copy labels blindly.
+
+## Example 1 — Concise `EVALUATE` for a partition
+
+### Input
+
+```text
+Is this territory list MECE: United States, North America, Europe, APAC?
+```
+
+### Output pattern
+
+```markdown
+# Verdict
+FAIL — United States is contained within North America, so the peer list overlaps.
+
+## Minimum Fix
+Choose one geographic level. For example:
+
+- North America
+- Europe
+- Asia-Pacific
+- Latin America
+- Middle East and Africa
+
+Boundary rule: classify each account by headquarters country as of quarter-end. Define a separate `Unknown headquarters` route until data is corrected.
+
+## Validation
+- Archetype: partition
+- Material failure: S4 applicable_overlap_test = FALSE
+- CE status: SUPPORTED until the intended global scope and country-to-region mapping are confirmed
+```
+
+The response does not lead with a generic definition, progress checklist, or full rubric.
+
+## Example 2 — `REPAIR` a Definition of Done
+
+### Input
+
+```text
+Tracking works; creative is good; landing page optimized.
+```
+
+### Repaired pattern
+
+```markdown
+# Done Means
+The campaign may launch only when every required criterion below is satisfied or formally waived.
+
+| Gate | Atomic Criterion | Evidence | Pass Threshold | Accountable Approver | Failure Action |
+|---|---|---|---|---|---|
+| Measurement | Primary conversion event fires once per successful submission | QA event log and analytics debug view | 10/10 scripted submissions recorded once with required parameters | Analytics Lead | Block launch and return to implementation |
+| Creative | Final assets match approved copy, dimensions, and brand rules | Signed creative QA checklist | 100% required checks pass | Creative Director | Revise and re-review |
+| Landing page | Page meets agreed performance and functional tests | Test report | Mobile LCP <= agreed threshold; all required links and forms pass | Web Lead | Block launch and remediate |
+
+## Logic
+`DONE = measurement_pass AND creative_pass AND landing_page_pass`
+```
+
+The criteria jointly define completion. The campaign is not classified into exactly one criterion.
+
+## Example 3 — `CREATE` an issue tree with interactions
+
+### Governing question
+
+```text
+Why did subscription churn increase this quarter?
+```
+
+### Working structure
+
+```text
+1. Did the customer mix become more churn-prone?
+   1.1 Segment mix
+   1.2 Contract and tenure mix
+
+2. Did the delivered customer experience deteriorate?
+   2.1 Product reliability and value realization
+   2.2 Support and onboarding experience
+
+3. Did commercial conditions increase cancellation pressure?
+   3.1 Pricing and packaging changes
+   3.2 Competitor offers and switching incentives
+
+4. Did measurement or timing create an apparent increase?
+   4.1 Cohort and denominator changes
+   4.2 Billing, cancellation, or reporting-policy changes
+```
+
+Interaction terms are tested separately, such as whether a price change disproportionately affected low-adoption customers. Real churn events are not forced into exactly one cause.
+
+## Example 4 — Four-question clarification batch with defaults
+
+```markdown
+1. **Decision:** Should this diagnose causes, assign ownership, or govern execution?  
+   Default: diagnose causes, because the request asks “why.”
+
+2. **Scope:** Does “growth” include acquisition, expansion, and retention?  
+   Default: yes, all three, because no narrower boundary is stated.
+
+3. **Atomic unit:** Should one leaf represent a causal driver or an initiative?  
+   Default: causal driver; initiatives should follow after diagnosis.
+
+4. **Deliverable:** Should the approved logic become a six-slide leadership deck?  
+   Default: yes, with one governing thought, three key-line slides, one action slide, and one appendix/assumptions slide.
+```
+
+Each question can be answered by confirming or replacing the proposed default.
+
+## Example 5 — Applicability-aware validation
+
+A static document taxonomy does not automatically need an accountable owner per category, workflow transitions, retries, or failure actions.
+
+```text
+C1–C8: applicable
+S1–S8: applicable
+S9: NOT_APPLICABLE unless cross-category relationships are intentionally modeled
+O1–O3 and O7: applicable when the taxonomy drives classification decisions
+O4–O6: NOT_APPLICABLE for a descriptive taxonomy with no governance workflow
+O8: applicable only when handed to another renderer or system
+O9: applicable
+```
+
+Do not fail a structure for omitting fields the archetype and decision do not require.
+
+===== END FILE: references/examples.md =====
+
+===== FILE: references/intake-and-screenshot.md =====
+# Intake, Ambiguity, and Screenshot Protocol
+
+Use this reference when the request is underspecified, the source is visual, or the intended structure is uncertain.
+
+## 1. Materiality test for clarification
+
+A missing fact is material when a plausible answer would change one or more of:
+
+- governing decision or audience;
+- scope boundary or time horizon;
+- atomic unit;
+- structural archetype;
+- basis of division;
+- number or meaning of top-level branches;
+- acceptance evidence or threshold;
+- recommended action.
+
+Ask when at least one material dependency is unresolved. Proceed with labeled assumptions when ambiguity only affects wording, formatting, or low-impact detail.
+
+## 2. Question prioritization
+
+Rank candidate questions by expected structural information gain:
+
+```text
+priority = probability_answer_changes_structure × magnitude_of_change × irreversibility
+```
+
+Ask no more than four questions in the initial batch. Give a proposed default and a brief reason with each question so the user can confirm or replace it. Prefer questions that eliminate entire alternative structures. Use one targeted follow-up only when the first answers reveal a new contradiction or materially different archetype.
+
+### Strong question forms
+
+- **Boundary:** “Does the scope include existing customers, prospects, or both? Default: both, because the source uses ‘accounts’ without a lifecycle qualifier.”
+- **Unit:** “Should each leaf represent a cause, an action, or a deliverable? Default: cause, because the governing question asks why performance changed.”
+- **Axis:** “Should the top level use customer lifecycle, business function, or time? Default: lifecycle, because the decision concerns conversion loss.”
+- **Decision:** “Is this for diagnosis, prioritization, ownership, or execution? Default: diagnosis, based on the request to identify drivers.”
+- **Evidence:** “What observable result marks each gate complete? Default: named artifact plus approver acceptance.”
+- **Forced choice with escape hatch:** “Is the primary audience executives, operators, or clients? Default: executives, because the requested output is a leadership deck.”
+
+### Weak question forms
+
+- “Can you provide more context?”
+- “What do you want?”
+- “Anything else?”
+- Asking for information already visible or supplied.
+- Asking about presentation preferences before structure is settled.
+
+## 3. Assumption protocol
+
+When proceeding without an answer:
+
+1. State each material assumption in one sentence.
+2. Explain which part of the structure it controls.
+3. Use a reversible default.
+4. Mark affected branches `ASSUMPTION`.
+5. Reduce confidence and collective-exhaustiveness status accordingly.
+
+Do not hide assumptions inside labels or prose.
+
+## 4. Visual evidence ledger
+
+For each meaningful visual element, capture:
+
+| Field | Meaning |
+|---|---|
+| ID | Stable source identifier, e.g. `V1` |
+| Text | Exact visible wording; use `[unreadable]` when needed |
+| Container | Box, circle, lane, header, callout, free text, icon |
+| Position | Relative location: top, left, row 2, column 3, nested under V4 |
+| Connector | Arrow, line, bracket, adjacency, overlap, none |
+| Direction | Source → destination when discernible |
+| Style cue | Color, weight, size, numbering, indentation |
+| Literal meaning | What is directly shown |
+| Structural inference | What the layout may imply |
+| Confidence | 0–100 for the inference, not for image quality alone |
+
+## 5. Visual grammar detection
+
+Classify the diagram before reconstructing it.
+
+### Hierarchy or tree
+
+Signals:
+
+- one parent above or left of children;
+- indentation or containment;
+- branching connectors;
+- repeated sibling shapes.
+
+Tests:
+
+- Do siblings answer the same parent?
+- Are levels consistent?
+- Are cross-links evidence of interaction or accidental overlap?
+
+### Workflow or sequence
+
+Signals:
+
+- directional arrows;
+- numbered stages;
+- start/end symbols;
+- swimlanes or handoffs.
+
+Tests:
+
+- Is every arrow direction clear?
+- Are entry, exit, exception, retry, and failure paths shown?
+- Are categories being mistaken for steps?
+
+### Matrix
+
+Signals:
+
+- two labeled axes;
+- rows and columns;
+- quadrants or cell intersections.
+
+Tests:
+
+- Is each axis independently MECE?
+- Are cells exclusive by definition?
+- Are empty cells valid, impossible, or simply missing?
+
+### Timeline
+
+Signals:
+
+- chronological labels;
+- left-to-right or top-to-bottom progression;
+- milestones and intervals.
+
+Tests:
+
+- Are time periods contiguous and non-overlapping?
+- Are activities, outcomes, and dates mixed on the same level?
+
+### Venn-like or overlap map
+
+Signals:
+
+- intersecting circles or regions;
+- shared labels in intersections.
+
+Tests:
+
+- Is overlap intentional?
+- Does the user's goal require conversion to a partition, matrix, or interaction model?
+- Do not label a Venn structure non-MECE merely because it represents real overlap.
+
+### Dashboard or collage
+
+Signals:
+
+- independent cards, metrics, and charts;
+- little or no explicit hierarchy;
+- visual grouping by proximity.
+
+Tests:
+
+- Is there an implied story or only a collection?
+- What decision should govern the regrouping?
+
+## 6. Confidence thresholds for visual interpretation
+
+- `90–100`: explicit label or unambiguous connector.
+- `75–89`: strong layout inference; verify when material.
+- `50–74`: plausible interpretation; ask before using as a structural premise.
+- `<50`: record as unknown; do not use to build logic.
+
+Do not use OCR output as authoritative when it conflicts with visual inspection or context. Use OCR only as a supporting tool when native inspection is insufficient and the environment permits it.
+
+## 7. Source reconstruction sequence
+
+1. Capture literal elements.
+2. Build the evidence ledger.
+3. Detect visual grammar.
+4. Recover parent-child or state-transition relationships.
+5. Separate content from styling.
+6. Identify structural defects in the source.
+7. Ask material questions.
+8. Rebuild the content architecture.
+9. Map each new element to source, derivation, assumption, or open question.
+10. Render only after validation.
+
+## 8. Screenshot-specific failure modes
+
+- Decorative arrows interpreted as dependencies.
+- Columns treated as categories when they are merely layout.
+- Color used as a category without a visible legend.
+- Repeated labels collapsed even though they refer to different stages.
+- Cropped branches omitted without disclosure.
+- Illegible text guessed from context.
+- Existing overlap “fixed” before determining whether it represents a real interaction.
+- Styling copied while the source logic remains mixed or incomplete.
+
+===== END FILE: references/intake-and-screenshot.md =====
+
+===== FILE: references/output-contracts.md =====
+# Output Contracts
+
+Choose the smallest contract that fully supports the user’s decision. Put the verdict or artifact before the audit trail. Do not expose internal progress checklists.
+
+## Proportionality rule
+
+Use the **compact contract** by default. Add a full applicable-check table, coverage ledger, source map, dual graders, or machine-readable handoff only when:
+
+- a material failure or uncertainty requires it;
+- the user requests a formal audit;
+- the output governs a high-stakes decision or operating process;
+- a screenshot or mixed source requires traceability;
+- another skill or system will render the artifact.
+
+Compress routine passes to one line. Expand `FALSE` and `NOT_ESTABLISHED` results.
+
+## 1. Compact universal contract
+
+```markdown
+# [Governing Answer, Verdict, or Finished Framework]
+[One-sentence governing thought or decision-ready artifact.]
+
+## Key Support or Material Defects
+1. [Distinct support or defect]
+2. [Distinct support or defect]
+3. [Distinct support or defect]
+
+## Framework / Repair
+[Tree, table, workflow, taxonomy, gate model, matrix, or outline.]
+
+## Validation
+- Archetype: [type]
+- Applicable checks: [passed]/[applicable]
+- Critical gates: [PASS/FAIL]
+- CE status: [PROVEN | SUPPORTED | ASSUMED | NOT_ESTABLISHED]
+- Readiness: [0–100, when formally scored]
+- Confidence: [0–100, with basis]
+- Material assumptions or failures: [only those that affect use]
+```
+
+## 2. `EVALUATE` contract
+
+```markdown
+# Verdict
+[PASS | CONDITIONAL_PASS | FAIL] — [one-sentence reason]
+
+## Highest-Impact Findings
+| Priority | Failed Check | Status | Evidence | Consequence | Minimum Fix |
+|---:|---|---|---|---|---|
+
+## Structural Diagnosis
+- Archetype:
+- Governing parent:
+- Atomic unit:
+- Basis:
+- Scope and exclusions:
+- CE status:
+
+## Minimum Repair
+[Smallest wording or structural changes that close the material failures.]
+
+## Validation Summary
+- Passed applicable checks: [x/y]
+- Critical gates: [PASS/FAIL]
+- Readiness: [when formally scored]
+- Confidence: [separate from readiness]
+```
+
+Provide the full applicable-check scorecard only when requested or high-stakes.
+
+## 3. `REPAIR` contract
+
+```markdown
+# Governing Diagnosis
+[The root structural problem and its consequence.]
+
+## Repaired Framework
+[Answer-first repaired artifact.]
+
+## Assignment or Operating Rules
+| Element | Inclusion / Entry / Acceptance Rule | Exclusion / Exit Rule | Edge Cases |
+|---|---|---|---|
+
+## Material Change Log
+| Source Element | Repaired Element | Reason | Provenance |
+|---|---|---|---|
+
+## Remaining Failures or Assumptions
+[Expand only FALSE and NOT_ESTABLISHED items.]
+
+## Validation
+[Compressed pass count, gates, CE status, readiness if scored, and confidence.]
+```
+
+## 4. `CREATE` contract
+
+```markdown
+# Recommended Structure
+[Completed decision-ready artifact.]
+
+## Scope Contract
+- Decision:
+- Audience:
+- Universe or parent:
+- Atomic unit:
+- Basis:
+- Exclusions:
+- Evidence standard:
+
+## Rules and Edge Cases
+[Only rules needed to use the framework correctly.]
+
+## Validation
+[Compressed applicable-check result, CE status, assumptions, readiness if scored, and confidence.]
+```
+
+## 5. Failure record
+
+Use for each material `FALSE` or `NOT_ESTABLISHED` check:
+
+```yaml
+failed_check: S4
+status: FALSE
+evidence: ""
+root_causes: []
+why_it_matters: ""
+minimum_fix_required: ""
+revised_wording_or_rule: ""
+```
+
+Do not force one root cause per failed check or one failed check per root cause.
+
+## 6. Issue tree contract
+
+```markdown
+# Governing Question
+[Question]
+
+## Working Answer or Hypothesis
+[Answer, if supportable; otherwise state what evidence is required.]
+
+## Issue Tree
+1. [Top-level sub-question]
+   1.1 [Leaf question]
+   1.2 [Leaf question]
+2. [Top-level sub-question]
+   2.1 [Leaf question]
+   2.2 [Leaf question]
+
+## Leaf Test Plan
+| Leaf | Evidence Needed | Method | Owner, if needed | Decision Rule |
+|---|---|---|---|---|
+
+## Interaction Terms
+[Cross-branch effects, confounders, or feedback that must be modeled separately.]
+```
+
+## 7. Taxonomy or segmentation contract
+
+```markdown
+# Universe and As-of Rule
+- Universe:
+- Atomic item:
+- As-of date or state:
+
+## Categories
+| Category | Inclusion Rule | Exclusion Rule | Boundary Rule |
+|---|---|---|---|
+
+## Exact-One Results
+- Gaps:
+- Overlaps:
+- Unknown assignments:
+- Residual share and closure rule:
+- Proof scope: [the precise bounded universe for which PROVEN applies]
+```
+
+## 8. Workflow or execution-plan contract
+
+```markdown
+# Target Outcome
+[Outcome]
+
+## Workflow
+| Stage | Entry | Action | Accountable Owner | Output | Exit | Exception / Failure Action |
+|---|---|---|---|---|---|---|
+
+## Transition Rules
+| From | Predicate | To | Evidence | Timeout / Escalation |
+|---|---|---|---|---|
+
+## Parallel Work and Dependencies
+[Explicit lanes, joins, prerequisites, retries, rollback, pause, cancellation, and terminal states.]
+```
+
+## 9. Definition of Done contract
+
+```markdown
+# Done Means
+[Single acceptance statement.]
+
+| Gate | Atomic Criterion | Evidence | Pass Threshold | Accountable Approver | Failure Action | Validity Window |
+|---|---|---|---|---|---|---|
+
+## Logic
+All non-waived required criteria are conjunctively satisfied. The completed object is not forced into exactly one criterion.
+
+## Waiver Rules
+| Criterion | Who May Waive | Required Rationale | Expiry | Follow-up Owner |
+|---|---|---|---|---|
+```
+
+## 10. Responsibility contract
+
+```markdown
+# Ownership Principle
+[One accountable owner per decision, task, or deliverable where accountability is required.]
+
+| Item | Accountable | Responsible | Consulted | Informed | Escalation | Backup |
+|---|---|---|---|---|---|---|
+```
+
+Multiple responsible, consulted, or informed parties are permitted when explicit.
+
+## 11. Matrix or portfolio contract
+
+```markdown
+# Decision and As-of Rule
+[Decision supported and measurement date/state.]
+
+## Axis Definitions
+| Axis | Band | Inclusion Rule | Boundary Rule | Unknown Rule |
+|---|---|---|---|---|
+
+## Cell Meanings
+| Cell | Interpretation | Default Action | Exceptions |
+|---|---|---|---|
+```
+
+Validate each axis independently before validating cell assignments.
+
+## 12. Screenshot reconstruction contract
+
+```markdown
+# Literal Source Recovery
+| Visual ID | Literal Content | Shape / Position / Connector | Confidence | Issue |
+|---|---|---|---:|---|
+
+## Recovered Logic
+[Faithful interpretation of what the source appears to mean.]
+
+## Uncertain Interpretations
+[Load-bearing ambiguities and proposed defaults.]
+
+## Rebuilt Version
+[Corrected artifact.]
+
+## Traceability
+| Rebuilt Element | Source Visual IDs | Provenance | Notes |
+|---|---|---|---|
+```
+
+## 13. Executive deck or document architecture
+
+Use conclusion-led section titles.
+
+```yaml
+governing_thought: "[Executive answer]"
+key_line:
+  - id: K1
+    title: "[Conclusion 1]"
+    role: "why | what | how | implication"
+    evidence_ids: [E1]
+  - id: K2
+    title: "[Conclusion 2]"
+    role: "why | what | how | implication"
+    evidence_ids: [E2]
+sections:
+  - id: S1
+    title: "[Action title]"
+    message: "[One controlling idea]"
+    support: []
+appendix: []
+```
+
+## 14. Machine-readable artifact handoff
+
+Use with `PREPARE_ARTIFACT_HANDOFF`.
+
+```yaml
+artifact_type: slide_deck | document | spreadsheet | diagram | other
+audience: ""
+decision: ""
+governing_thought: ""
+key_line:
+  - id: ""
+    statement: ""
+    order_logic: logical | chronological | structural | comparative | causal_dependency
+sections:
+  - id: ""
+    parent_id: null
+    title: ""
+    role: ""
+    content: []
+    evidence_ids: []
+    provenance: SOURCE | DERIVED | ASSUMPTION | OPEN
+sources:
+  - id: ""
+    location: ""
+    note: ""
+assumptions: []
+open_questions: []
+ce_status: PROVEN | SUPPORTED | ASSUMED | NOT_ESTABLISHED
+validation:
+  applicable_checks_passed: 0
+  applicable_checks_total: 0
+  minto_readiness: null
+  mece_operational_readiness: null
+  critical_gates: PASS | FAIL
+  confidence: 0
+  grading_isolation: NOT_RUN | INDEPENDENT | QUASI_INDEPENDENT
+format_constraints: []
+```
+
+A renderer may compress wording or adjust layout. It may not change hierarchy, scope, basis, evidence mapping, assumptions, or validation state without revalidation.
+
+===== END FILE: references/output-contracts.md =====
+
+===== FILE: references/output-rubric.md =====
+# High-Stakes Output Rubric
+
+Use this rubric for executive materials, ambiguous multi-source work, operating systems, artifact handoffs, or whenever the user requests a formal audit. For routine jobs, use `check-catalog.md` without exposing a full dual scorecard.
+
+Scores summarize evidence. They are not targets. A numerical total cannot override a critical-gate failure.
+
+## Scoring anchors
+
+For each applicable criterion, award a percentage of its weight:
+
+- `100% of weight`: complete, explicit, source-grounded, and robust under edge cases.
+- `90% of weight`: production-ready; only immaterial tuning remains.
+- `75% of weight`: useful but one material weakness remains.
+- `50% of weight`: partially present; substantial repair is required.
+- `25% of weight`: mentioned without operational substance.
+- `0% of weight`: absent, contradicted, or invalid.
+- `NOT_APPLICABLE`: remove the weight from the denominator.
+- `NOT_ESTABLISHED`: award zero until evidence is supplied or the uncertainty is accepted as non-blocking.
+
+Normalize each grader to 100 over applicable weight. Record evidence for every deduction.
+
+## Isolation protocol
+
+1. Give both graders the same frozen source ledger, scope contract, draft artifact, archetype rules, and applicable-check decisions.
+2. Use separate subagents or fresh contexts when available. This is `INDEPENDENT` grading.
+3. Otherwise run two blinded passes in the same context, freezing each result before reconciliation. Label this `QUASI_INDEPENDENT`.
+4. Do not expose one grader’s score, deductions, or repair suggestions to the other before both initial records are frozen.
+5. Resolve disagreements caused by different scope or archetype assumptions before editing the artifact.
+6. The lower evidence-supported result governs release when a critical gate or material deduction is disputed.
+
+---
+
+# Grader A — Minto Structure Readiness
+
+| Criterion | Weight | Full-credit standard |
+|---|---:|---|
+| 1. Governing decision and scope | 12 | Governing question, audience, decision, scope, unit, and exclusions are explicit or transparently assumed. |
+| 2. Governing thought / answer first | 12 | The output opens with a defensible answer, verdict, or completed artifact that summarizes the key line. |
+| 3. Vertical logic | 14 | Every child directly answers or supports its parent; every parent accurately synthesizes its children. |
+| 4. Horizontal logic and single basis | 14 | Siblings are logically alike, at one abstraction level, and use one basis of division. |
+| 5. Archetype-appropriate ME/CE proof | 14 | Overlap, gaps, boundaries, interactions, exceptions, and residuals are tested using the selected archetype’s rule. |
+| 6. Granularity and deconstruction | 10 | Items are atomic enough to test or act on; compound and duplicate ideas are split or consolidated. |
+| 7. Logical ordering and sequencing | 8 | One governing relation is explicit and appropriate: logical implication, chronological sequence, structural arrangement, comparative rank, or causal/dependency relation. Predecessor and blocker tests apply only to execution or dependency sequences. |
+| 8. Source fidelity and assumptions | 8 | Material content is traceable to source, derivation, assumption, or open question; meaning is preserved. |
+| 9. Decision usefulness | 5 | The structure changes a decision, action, priority, ownership assignment, or acceptance state. |
+| 10. Clarity and economy | 3 | Labels are informative and the visible method is proportional to the task. |
+
+## Minto critical gates
+
+```text
+M1 governing parent or decision is defined
+M2 no material source meaning is silently changed
+M3 every top-level sibling directly supports the governing thought or parent
+M4 no known material overlap, gap, exception, or interaction is concealed
+M5 collective-exhaustiveness and confidence claims are not overstated
+```
+
+---
+
+# Grader B — MECE Operational Readiness
+
+| Criterion | Weight | Full-credit standard |
+|---|---:|---|
+| 1. Correct archetype and validity rule | 14 | The output uses the correct rule for partition, tree, workflow, DoD, decision, ownership, matrix, causal, or narrative logic. |
+| 2. Intake and ambiguity control | 10 | Material ambiguity was resolved with no more than four high-information questions with proposed defaults, or explicit reversible assumptions. |
+| 3. Applicable overlap validation | 12 | The archetype-specific overlap or duplication test covers boundary, compound, temporal, and shared-role cases as relevant. |
+| 4. Coverage validation | 12 | Coverage uses the strongest available proof method and handles unknown, null, residual, exception, and interaction cases. |
+| 5. Observability and testability | 12 | Applicable criteria, predicates, states, leaves, or outputs can be verified using defined evidence or tests. |
+| 6. Ownership and decision rights | 8 | Accountability is singular where required; contributors, approvers, waivers, and escalations are explicit. |
+| 7. Thresholds, transitions, and failure handling | 10 | Acceptance rules, state transitions, dependencies, exceptions, retries, or failure actions are explicit where applicable. |
+| 8. Traceability and evidence | 8 | Source items map to output elements; evidence is identifiable and realistically obtainable. |
+| 9. Artifact handoff integrity | 6 | Rendering can preserve hierarchy, scope, basis, evidence, assumptions, and validation state. |
+| 10. Efficiency and proportionality | 8 | The method is no more complex than the decision requires; routine passes are compressed and material failures are expanded. |
+
+## Operational critical gates
+
+```text
+O1 structural archetype is identified correctly
+O2 material ambiguity is resolved or labeled
+O3 the applicable overlap or duplication test passes
+O4 meaningful gaps, exceptions, and interactions are closed or disclosed
+O5 operational criteria are testable where execution is requested
+O6 accountability is singular where the archetype requires it
+O7 failure states and downstream handoff risks are not silently omitted
+```
+
+---
+
+# Readiness, confidence, and verdict
+
+Calculate separate readiness scores for the two graders over applicable weight:
+
+```text
+MINTO_READINESS = 100 * Minto points earned / applicable Minto weight
+MECE_OPERATIONAL_READINESS = 100 * Operational points earned / applicable Operational weight
+```
+
+Calculate confidence independently:
+
+```text
+SOURCE_CONFIDENCE = confidence in source legibility, completeness, and reliability
+ARCHETYPE_CONFIDENCE = confidence in the selected parent, unit, basis, and structural model
+COVERAGE_CONFIDENCE = confidence in the coverage proof and edge-case testing
+FINAL_CONFIDENCE = minimum(SOURCE_CONFIDENCE, ARCHETYPE_CONFIDENCE, COVERAGE_CONFIDENCE)
+```
+
+Pass logic:
+
+```text
+PASS =
+  MINTO_READINESS >= 90
+  AND MECE_OPERATIONAL_READINESS >= 90
+  AND all applicable critical gates = PASS
+  AND FINAL_CONFIDENCE >= 90
+
+CONDITIONAL_PASS =
+  all applicable critical gates = PASS
+  AND only disclosed, non-blocking assumptions or open evidence requests remain
+
+FAIL =
+  any critical gate = FAIL
+  OR a material structural or operational defect remains
+```
+
+Do not call a weighted pass percentage “confidence.” Do not average readiness and confidence.
+
+## Repair and stopping protocol
+
+1. List deductions in descending material impact.
+2. Repair the highest-impact supported failure first.
+3. Re-run the selected archetype’s checks and verify the repair did not create a new defect.
+4. Re-grade using the same frozen scope and applicability decisions unless new evidence justifies a documented change.
+5. Run at most three internal repair passes.
+6. Stop earlier when all gates pass and thresholds are met, or when missing evidence blocks improvement.
+7. If blocked, deliver the strongest supported version with the blocking evidence, assumption, or scope choice named.
+
+Never increase a score because the output is polished or because the loop is approaching its limit.
+
+===== END FILE: references/output-rubric.md =====
+
+===== FILE: references/platform-alignment.md =====
+# 2026 Platform Alignment Notes
+
+Reviewed: 2026-07-21
+
+This file documents release-level design choices. It is not part of the routine MECE workflow.
+
+## OpenAI / ChatGPT / Codex
+
+Current OpenAI guidance treats a skill as a focused directory containing required `SKILL.md` instructions and optional `scripts/`, `references/`, `assets/`, and `agents/openai.yaml`. Codex first sees the skill name and description, then loads the full instructions only after activation. OpenAI recommends concise descriptions with clear scope, boundaries, and natural trigger phrases; imperative inputs and outputs; instructions before scripts unless deterministic execution improves reliability; and prompt testing for activation and output behavior.
+
+Sources:
+
+- https://developers.openai.com/codex/build-skills
+- https://developers.openai.com/codex/learn/best-practices
+- https://developers.openai.com/blog/eval-skills
+
+Package implications:
+
+- The description front-loads `Evaluate`, `repair`, `create`, `MECE`, and common user phrases.
+- Negative trigger boundaries are explicit.
+- `SKILL.md` contains the core workflow; detailed archetypes, rubrics, contracts, and eval guidance use progressive disclosure.
+- Scripts are limited to deterministic validation and a model-agnostic eval harness.
+- `agents/openai.yaml` supplies optional interface metadata and implicit invocation policy.
+
+## Anthropic / Claude
+
+Current Claude Code guidance follows the Agent Skills open standard, uses descriptions for automatic invocation, recommends concise skill bodies with supporting files for detail, and explicitly advises keeping `SKILL.md` under 500 lines. Anthropic separates activation quality from output quality and recommends fresh-session comparisons with the skill enabled and disabled. Its skill-creator workflow records prompts, input files, assertions, grading, benchmarks, and blind version comparisons.
+
+Sources:
+
+- https://code.claude.com/docs/en/skills
+- https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices
+- https://platform.claude.com/docs/en/test-and-evaluate/develop-tests
+
+Package implications:
+
+- `SKILL.md` remains below 500 lines.
+- Instructions are direct, imperative, and answer-first.
+- The skill uses supporting references rather than loading all detail on every invocation.
+- Eval definitions separate trigger cases from output assertions.
+- The harness supports isolated with-skill and without-skill result collection through a target-client adapter.
+
+## Cross-platform constraints
+
+- Keep the skill focused on one coherent job: engineering decision-ready MECE frameworks and materials.
+- Use structural archetype selection before validation to prevent category errors.
+- Preserve source content and label interpretation, assumptions, and open questions.
+- Use deterministic scripts only for finite, mechanically checkable claims.
+- Treat static design review and runtime model performance as different evidence classes.
+- Do not claim measured trigger accuracy or output pass rates without actual fresh-session runs.
+
+===== END FILE: references/platform-alignment.md =====
+
+===== FILE: references/skill-engineering-rubric.md =====
+# Skill Engineering Review Rubric
+
+This rubric evaluates the `/mece` skill package itself. It is intended for authoring and release review, not routine execution.
+
+Review [platform-alignment.md](platform-alignment.md) before release scoring.
+
+## Universal scoring anchors
+
+- `100%`: explicit, testable, production-ready, and supported by fixtures or validation.
+- `90%`: production-ready with only immaterial tuning remaining.
+- `75%`: strong draft with one material reliability gap.
+- `50%`: usable concept with several material gaps.
+- `25%`: mostly aspirational.
+- `0%`: absent or invalid.
+
+A release passes only when both reviewers score at least 90, all critical gates pass, and review confidence is at least 90%.
+
+---
+
+# Reviewer A — Minto Architecture of the Skill (100 points)
+
+| Criterion | Weight | Full-credit standard |
+|---|---:|---|
+| 1. One governing purpose | 12 | The skill solves one coherent job and its purpose can be stated in one sentence. |
+| 2. Answer-first instruction hierarchy | 10 | Core rules and workflow precede detail; supporting references are progressively disclosed. |
+| 3. Vertical logic | 14 | Every section supports the skill's governing purpose; no orphan instructions. |
+| 4. Horizontal logic | 14 | Sibling sections and lists use one logical basis and consistent abstraction. |
+| 5. Collective coverage of the job | 14 | Routing, intake, construction, validation, delivery, and failure handling cover the full workflow. |
+| 6. Separation of structure types | 12 | Distinct archetypes are separated rather than forced into one universal test. |
+| 7. Ordering and sequencing | 8 | The procedure follows a clear inspect → clarify → select → build → validate → deliver sequence. |
+| 8. Precision and economy | 8 | Instructions are concise, actionable, and free of repetitive ceremony. |
+| 9. Edge-case integrity | 5 | Ambiguity, screenshots, hybrid structures, exceptions, and unbounded universes are handled. |
+| 10. Decision usefulness | 3 | The skill reliably produces material that supports a real decision or action. |
+
+### Minto design critical gates
+
+```text
+A1 no universal rule creates a category error across structure types
+A2 the core workflow is top-down and complete
+A3 the skill does not overclaim MECE or certainty
+A4 output is answer-first and decision-led
+```
+
+---
+
+# Reviewer B — 2026 Agent Skill Engineering (100 points)
+
+| Criterion | Weight | Full-credit standard |
+|---|---:|---|
+| 1. Trigger description and boundaries | 12 | Frontmatter states what, when, relevant inputs, and near-miss exclusions in under 1024 characters. |
+| 2. Coherent scope | 10 | One reusable workflow; adjacent tasks are handed off rather than absorbed. |
+| 3. Progressive disclosure | 10 | `SKILL.md` contains core instructions; focused references, scripts, assets, and evals load only as needed. |
+| 4. Multimodal and source handling | 10 | Text, files, screenshots, provenance, contradictions, and low-confidence interpretation are explicit. |
+| 5. Clarification and autonomy calibration | 10 | The skill asks no more than four material questions with proposed defaults, allows one targeted follow-up, and proceeds with labeled reversible assumptions when appropriate. |
+| 6. Routing and conditional workflow | 12 | Branch logic selects one primary mode, optional processing modifiers, and the correct archetype before execution. |
+| 7. Determinism and validation | 10 | Deterministic checks are scripted where suitable; applicability, readiness, confidence, evidence-led gates, and a three-pass stopping rule are explicit. |
+| 8. Output contracts and handoffs | 8 | Inputs, outputs, artifact boundaries, and downstream handoffs are explicit. |
+| 9. Evals and observability | 12 | Balanced trigger and output evals cover positive, near-miss, edge, and regression cases; an executable adapter-based harness supports fresh-run with-skill/without-skill comparison. |
+| 10. Portability, safety, and failure handling | 6 | Valid Agent Skills packaging, bounded tool assumptions, helpful errors, and no unsafe silent behavior. |
+
+### Skill engineering critical gates
+
+```text
+B1 valid SKILL.md frontmatter and package structure
+B2 description has positive and negative routing boundaries
+B3 SKILL.md remains below 500 lines and uses progressive disclosure
+B4 material ambiguity and screenshot uncertainty are handled
+B5 balanced trigger and output fixtures exist and the evaluation harness validates and summarizes fresh-run comparisons
+B6 no unsupported claim of empirical performance
+```
+
+---
+
+# Release logic
+
+```text
+RELEASE_PASS =
+  MINTO_SKILL_SCORE >= 90
+  AND AGENT_SKILL_ENGINEERING_SCORE >= 90
+  AND all critical gates = PASS
+  AND review_confidence >= 90
+```
+
+## Review confidence
+
+Use the minimum of:
+
+- `spec_alignment_confidence`: alignment with current Agent Skills, ChatGPT/Codex, and Claude guidance;
+- `static_validation_confidence`: frontmatter, links, line counts, JSON, and scripts validated;
+- `behavioral_design_confidence`: rubric and fixture coverage support the predicted behavior.
+
+Runtime trigger accuracy and output pass rates require execution in the target client. Do not label design review scores as measured runtime performance.
+
+===== END FILE: references/skill-engineering-rubric.md =====
+
+===== FILE: assets/artifact-handoff.yaml =====
+artifact_type: ""
+audience: ""
+decision: ""
+primary_mode: CREATE
+modifiers: []
+governing_thought: ""
+key_line:
+  - id: K1
+    statement: ""
+    order_logic: ""
+sections:
+  - id: S1
+    parent_id: null
+    title: ""
+    role: ""
+    content: []
+    evidence_ids: []
+    provenance: SOURCE
+sources:
+  - id: E1
+    location: ""
+    note: ""
+assumptions: []
+open_questions: []
+ce_status: NOT_ESTABLISHED
+validation:
+  applicable_checks_passed: 0
+  applicable_checks_total: 0
+  minto_readiness: null
+  mece_operational_readiness: null
+  critical_gates: FAIL
+  confidence: 0
+  grading_isolation: NOT_RUN
+format_constraints: []
+
+===== END FILE: assets/artifact-handoff.yaml =====
+
+===== FILE: assets/coverage-ledger.md =====
+| Source ID / Item | Atomic Meaning | Assigned Location | Provenance | Evidence | Status | Notes |
+|---|---|---|---|---|---|---|
+|  |  |  | SOURCE / DERIVED / ASSUMPTION / OPEN |  | assigned / gap / overlap / unresolved |  |
+
+===== END FILE: assets/coverage-ledger.md =====
+
+===== FILE: scripts/validate_partition.py =====
+#!/usr/bin/env python3
+"""Validate a finite partition or a set of numeric interval bands.
+
+Input JSON:
+{
+  "universe": ["item-a", "item-b"],
+  "categories": {
+    "category-1": ["item-a"],
+    "category-2": ["item-b"]
+  }
+}
+
+Partition mode reports gaps, overlaps, assignments outside the universe,
+duplicate entries within a category, and whether strict MECE passes.
+
+Interval mode is selected by a top-level ``intervals`` key. It validates
+explicit endpoint inclusivity, pairwise disjointness, full domain coverage,
+missing-data routing, and exact-one routing for any supplied numeric values.
+``null`` endpoints are unbounded. Exit codes are 0 for a strict pass, 1 for
+validation failures, and 2 for invalid input.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+from collections import Counter, defaultdict
+from pathlib import Path
+from typing import Any
+
+
+NEG_INF = float("-inf")
+POS_INF = float("inf")
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Validate that every item in a finite universe belongs to exactly one "
+            "category, or that numeric interval bands are disjoint and cover a domain."
+        )
+    )
+    parser.add_argument("input", type=Path, help="Path to the input JSON file.")
+    parser.add_argument(
+        "--output",
+        type=Path,
+        help="Optional path for the JSON report. Prints to stdout when omitted.",
+    )
+    parser.add_argument(
+        "--allow-duplicates-within-category",
+        action="store_true",
+        help="Do not fail strict MECE solely because a category repeats an item.",
+    )
+    return parser.parse_args()
+
+
+def load_payload(path: Path) -> dict[str, Any]:
+    try:
+        raw = path.read_text(encoding="utf-8")
+    except OSError as exc:
+        raise ValueError(f"Cannot read input file '{path}': {exc}") from exc
+
+    try:
+        payload = json.loads(raw)
+    except json.JSONDecodeError as exc:
+        raise ValueError(
+            f"Invalid JSON in '{path}' at line {exc.lineno}, column {exc.colno}: {exc.msg}"
+        ) from exc
+
+    if not isinstance(payload, dict):
+        raise ValueError("Input root must be a JSON object.")
+    return payload
+
+
+def validate_schema(payload: dict[str, Any]) -> tuple[list[str], dict[str, list[str]]]:
+    universe = payload.get("universe")
+    categories = payload.get("categories")
+
+    if not isinstance(universe, list):
+        raise ValueError("'universe' must be a JSON array.")
+    if not isinstance(categories, dict):
+        raise ValueError("'categories' must be a JSON object mapping names to arrays.")
+
+    normalized_universe: list[str] = []
+    for index, item in enumerate(universe):
+        if not isinstance(item, str) or not item.strip():
+            raise ValueError(f"universe[{index}] must be a non-empty string.")
+        normalized_universe.append(item)
+
+    normalized_categories: dict[str, list[str]] = {}
+    for name, items in categories.items():
+        if not isinstance(name, str) or not name.strip():
+            raise ValueError("Every category name must be a non-empty string.")
+        if not isinstance(items, list):
+            raise ValueError(f"Category '{name}' must map to a JSON array.")
+        normalized_items: list[str] = []
+        for index, item in enumerate(items):
+            if not isinstance(item, str) or not item.strip():
+                raise ValueError(
+                    f"categories['{name}'][{index}] must be a non-empty string."
+                )
+            normalized_items.append(item)
+        normalized_categories[name] = normalized_items
+
+    return normalized_universe, normalized_categories
+
+
+def validate_partition(
+    universe: list[str],
+    categories: dict[str, list[str]],
+    *,
+    allow_duplicates_within_category: bool,
+) -> dict[str, Any]:
+    universe_counts = Counter(universe)
+    duplicate_universe_items = sorted(
+        item for item, count in universe_counts.items() if count > 1
+    )
+    universe_set = set(universe)
+
+    assignments: dict[str, list[str]] = defaultdict(list)
+    duplicate_entries: dict[str, list[str]] = {}
+    assigned_outside_universe: dict[str, list[str]] = {}
+
+    for category, raw_items in categories.items():
+        counts = Counter(raw_items)
+        duplicates = sorted(item for item, count in counts.items() if count > 1)
+        if duplicates:
+            duplicate_entries[category] = duplicates
+
+        outside = sorted(item for item in counts if item not in universe_set)
+        if outside:
+            assigned_outside_universe[category] = outside
+
+        for item in counts:
+            if item in universe_set:
+                assignments[item].append(category)
+
+    gaps = sorted(item for item in universe_set if len(assignments[item]) == 0)
+    overlaps = {
+        item: sorted(assignments[item])
+        for item in sorted(universe_set)
+        if len(assignments[item]) > 1
+    }
+    exact_one_items = sorted(
+        item for item in universe_set if len(assignments[item]) == 1
+    )
+
+    duplicate_failure = bool(duplicate_entries) and not allow_duplicates_within_category
+    strict_mece_pass = not any(
+        [
+            duplicate_universe_items,
+            gaps,
+            overlaps,
+            assigned_outside_universe,
+            duplicate_failure,
+        ]
+    )
+
+    return {
+        "strict_mece_pass": strict_mece_pass,
+        "universe_size": len(universe_set),
+        "category_count": len(categories),
+        "exact_one_count": len(exact_one_items),
+        "exact_one_items": exact_one_items,
+        "gaps": gaps,
+        "overlaps": overlaps,
+        "assigned_outside_universe": assigned_outside_universe,
+        "duplicate_entries_within_category": duplicate_entries,
+        "duplicate_items_in_universe": duplicate_universe_items,
+        "membership": {
+            item: sorted(assignments[item]) for item in sorted(universe_set)
+        },
+        "notes": [
+            "This validator proves exact-one membership only for the supplied finite universe and assignments.",
+            "It does not prove that the supplied universe is complete or that category definitions use a sound basis of division.",
+        ],
+    }
+
+
+class Band:
+    """A one-dimensional interval with explicit endpoint inclusivity."""
+
+    def __init__(self, name: str, lo: float, lo_inc: bool, hi: float, hi_inc: bool):
+        self.name = name
+        self.lo = lo
+        self.lo_inc = lo_inc
+        self.hi = hi
+        self.hi_inc = hi_inc
+
+    def contains(self, value: float) -> bool:
+        above = value > self.lo or (value == self.lo and self.lo_inc)
+        below = value < self.hi or (value == self.hi and self.hi_inc)
+        return above and below
+
+    def label(self) -> str:
+        left = "[" if self.lo_inc else "("
+        right = "]" if self.hi_inc else ")"
+        lo = "-inf" if self.lo == NEG_INF else format_number(self.lo)
+        hi = "+inf" if self.hi == POS_INF else format_number(self.hi)
+        return f"{left}{lo}, {hi}{right}"
+
+
+def format_number(value: float) -> str:
+    if value == int(value):
+        return str(int(value))
+    return repr(value)
+
+
+def parse_endpoint(
+    band: dict[str, Any], key: str, band_name: str, infinite: float
+) -> tuple[float, bool, list[str]]:
+    """Return value, inclusivity, and validation problems for one endpoint."""
+    problems: list[str] = []
+    sentinel = object()
+    raw = band.get(key, sentinel)
+    inc_key = f"{key}_inclusive"
+    if raw is sentinel:
+        problems.append(f"Band '{band_name}' is missing '{key}' (use null for unbounded).")
+        return infinite, False, problems
+    if raw is None:
+        if inc_key in band:
+            problems.append(
+                f"Band '{band_name}' sets '{inc_key}' on an unbounded endpoint; remove it."
+            )
+        return infinite, False, problems
+    if not isinstance(raw, (int, float)) or isinstance(raw, bool):
+        problems.append(f"Band '{band_name}' has a non-numeric '{key}'.")
+        return infinite, False, problems
+    if inc_key not in band or not isinstance(band[inc_key], bool):
+        problems.append(
+            f"Band '{band_name}' has a finite '{key}' without an explicit boolean "
+            f"'{inc_key}'."
+        )
+        return float(raw), False, problems
+    return float(raw), band[inc_key], problems
+
+
+def bands_overlap(a: Band, b: Band) -> str | None:
+    """Return a label for the overlapping region, or None when disjoint."""
+    if a.lo > b.lo or (a.lo == b.lo and not a.lo_inc and b.lo_inc):
+        a, b = b, a
+    lo, lo_inc = b.lo, b.lo_inc
+    if a.lo == b.lo:
+        lo_inc = a.lo_inc and b.lo_inc
+    hi, hi_inc = (a.hi, a.hi_inc) if a.hi < b.hi else (b.hi, b.hi_inc)
+    if a.hi == b.hi:
+        hi, hi_inc = a.hi, a.hi_inc and b.hi_inc
+    if lo < hi or (lo == hi and lo_inc and hi_inc):
+        return Band("overlap", lo, lo_inc, hi, hi_inc).label()
+    return None
+
+
+def coverage_gaps(domain: Band, bands: list[Band]) -> list[str]:
+    """Walk the domain from left to right and report uncovered intervals."""
+    gaps: list[str] = []
+    ordered = sorted(bands, key=lambda band: (band.lo, not band.lo_inc))
+    needed_value, needed_closed = domain.lo, domain.lo_inc
+    done = False
+
+    for band in ordered:
+        if done:
+            break
+        starts_in_time = (
+            band.lo < needed_value
+            or (band.lo == needed_value and (band.lo_inc or not needed_closed))
+        )
+        ends_usefully = band.hi > needed_value or (
+            band.hi == needed_value and band.hi_inc and needed_closed
+        )
+        if not ends_usefully:
+            continue
+        if not starts_in_time:
+            gaps.append(
+                Band(
+                    "gap", needed_value, needed_closed, band.lo, not band.lo_inc
+                ).label()
+            )
+        if band.hi == POS_INF:
+            done = True
+            continue
+        needed_value, needed_closed = band.hi, not band.hi_inc
+
+    if not done:
+        past_domain_end = needed_value > domain.hi or (
+            needed_value == domain.hi and not (needed_closed and domain.hi_inc)
+        )
+        if not past_domain_end:
+            gaps.append(
+                Band(
+                    "gap", needed_value, needed_closed, domain.hi, domain.hi_inc
+                ).label()
+            )
+    return gaps
+
+
+def validate_intervals(spec: dict[str, Any]) -> dict[str, Any]:
+    """Validate that numeric bands form a strict partition of a domain."""
+    if not isinstance(spec, dict):
+        raise ValueError("'intervals' must be a JSON object.")
+
+    raw_domain = spec.get("domain")
+    if not isinstance(raw_domain, dict) or not {"min", "max"} <= set(raw_domain):
+        raise ValueError(
+            "'intervals.domain' must contain 'min' and 'max' numbers or null."
+        )
+    for key in ("min", "max"):
+        value = raw_domain[key]
+        if value is not None and (
+            not isinstance(value, (int, float)) or isinstance(value, bool)
+        ):
+            raise ValueError(f"'intervals.domain.{key}' must be a number or null.")
+    domain = Band(
+        "domain",
+        NEG_INF if raw_domain["min"] is None else float(raw_domain["min"]),
+        raw_domain["min"] is not None,
+        POS_INF if raw_domain["max"] is None else float(raw_domain["max"]),
+        raw_domain["max"] is not None,
+    )
+    if domain.lo > domain.hi:
+        raise ValueError("'intervals.domain' has min greater than max.")
+
+    raw_bands = spec.get("bands")
+    if not isinstance(raw_bands, list) or not raw_bands:
+        raise ValueError("'intervals.bands' must be a non-empty JSON array.")
+
+    malformed: list[str] = []
+    bands: list[Band] = []
+    seen_names: Counter[str] = Counter()
+    for index, raw_band in enumerate(raw_bands):
+        if not isinstance(raw_band, dict):
+            malformed.append(f"bands[{index}] must be a JSON object.")
+            continue
+        name = raw_band.get("name")
+        if not isinstance(name, str) or not name.strip():
+            malformed.append(f"bands[{index}] needs a non-empty string 'name'.")
+            name = f"bands[{index}]"
+        seen_names[name] += 1
+        lo, lo_inc, lo_problems = parse_endpoint(raw_band, "min", name, NEG_INF)
+        hi, hi_inc, hi_problems = parse_endpoint(raw_band, "max", name, POS_INF)
+        malformed.extend(lo_problems + hi_problems)
+        if lo_problems or hi_problems:
+            continue
+        candidate = Band(name, lo, lo_inc, hi, hi_inc)
+        if lo > hi or (lo == hi and not (lo_inc and hi_inc)):
+            malformed.append(f"Band '{name}' is empty: {candidate.label()}.")
+            continue
+        bands.append(candidate)
+    malformed.extend(
+        f"Band name '{name}' is used {count} times; names must be unique."
+        for name, count in sorted(seen_names.items())
+        if count > 1
+    )
+
+    overlaps: list[dict[str, str]] = []
+    for index, left in enumerate(bands):
+        for right in bands[index + 1 :]:
+            region = bands_overlap(left, right)
+            if region is not None:
+                overlaps.append(
+                    {"bands": f"{left.name} x {right.name}", "region": region}
+                )
+
+    outside_domain = [
+        {"band": band.name, "extent": band.label()}
+        for band in bands
+        if band.lo < domain.lo
+        or band.hi > domain.hi
+        or (band.lo == domain.lo and band.lo_inc and not domain.lo_inc)
+        or (band.hi == domain.hi and band.hi_inc and not domain.hi_inc)
+    ]
+    gaps = coverage_gaps(domain, bands) if bands else [domain.label()]
+
+    raw_values = spec.get("values", {})
+    if not isinstance(raw_values, dict):
+        raise ValueError(
+            "'intervals.values' must map item names to numbers or null."
+        )
+    missing_category = spec.get("missing_data_category")
+    if missing_category is not None and (
+        not isinstance(missing_category, str) or not missing_category.strip()
+    ):
+        raise ValueError(
+            "'intervals.missing_data_category' must be a non-empty string when present."
+        )
+
+    assignments: dict[str, list[str]] = {}
+    null_values: list[str] = []
+    values_outside_domain: list[str] = []
+    for item in sorted(raw_values):
+        value = raw_values[item]
+        if value is None:
+            null_values.append(item)
+            assignments[item] = [missing_category] if missing_category else []
+            continue
+        if not isinstance(value, (int, float)) or isinstance(value, bool):
+            raise ValueError(f"'intervals.values[{item!r}]' must be a number or null.")
+        numeric_value = float(value)
+        if not domain.contains(numeric_value):
+            values_outside_domain.append(item)
+        assignments[item] = sorted(
+            band.name for band in bands if band.contains(numeric_value)
+        )
+
+    missing_data_unrouted = bool(null_values) and not missing_category
+    value_routing_failures = sorted(
+        item
+        for item, homes in assignments.items()
+        if item not in null_values and len(homes) != 1
+    )
+    strict_interval_mece_pass = not any(
+        [
+            malformed,
+            overlaps,
+            gaps,
+            outside_domain,
+            missing_data_unrouted,
+            value_routing_failures,
+            values_outside_domain,
+        ]
+    )
+
+    return {
+        "mode": "intervals",
+        "strict_interval_mece_pass": strict_interval_mece_pass,
+        "domain": domain.label(),
+        "band_count": len(bands),
+        "bands": {band.name: band.label() for band in bands},
+        "malformed": malformed,
+        "overlaps": overlaps,
+        "gaps": gaps,
+        "bands_outside_domain": outside_domain,
+        "value_assignments": assignments,
+        "value_routing_failures": value_routing_failures,
+        "values_outside_domain": values_outside_domain,
+        "null_values": null_values,
+        "missing_data_category": missing_category,
+        "missing_data_unrouted": missing_data_unrouted,
+        "notes": [
+            "This validator proves band geometry and supplied value routing only for the supplied specification.",
+            "It does not prove that the domain, unit, as-of rule, or banding basis is correct or decision-useful.",
+            "Null values require a declared missing_data_category outside the numeric bands.",
+        ],
+    }
+def emit(report: dict[str, Any], output: Path | None) -> None:
+    rendered = json.dumps(report, indent=2, sort_keys=True) + "\n"
+    if output is None:
+        sys.stdout.write(rendered)
+        return
+
+    try:
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(rendered, encoding="utf-8")
+    except OSError as exc:
+        raise ValueError(f"Cannot write output file '{output}': {exc}") from exc
+
+
+def main() -> int:
+    args = parse_args()
+    try:
+        payload = load_payload(args.input)
+        if "intervals" in payload:
+            report = validate_intervals(payload["intervals"])
+            passed = report["strict_interval_mece_pass"]
+        else:
+            universe, categories = validate_schema(payload)
+            report = validate_partition(
+                universe,
+                categories,
+                allow_duplicates_within_category=args.allow_duplicates_within_category,
+            )
+            passed = report["strict_mece_pass"]
+        emit(report, args.output)
+    except ValueError as exc:
+        sys.stderr.write(f"ERROR: {exc}\n")
+        return 2
+
+    return 0 if passed else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+
+===== END FILE: scripts/validate_partition.py =====
+
+===== FILE: scripts/validate_skill.py =====
+#!/usr/bin/env python3
+"""Static validator for the portable MECE Agent Skill package.
+
+Uses only the Python standard library. It validates package structure,
+frontmatter constraints, local Markdown links, JSON evals, Python syntax,
+and the finite-partition fixtures. It does not claim runtime model quality.
+"""
+
+from __future__ import annotations
+
+import argparse
+import ast
+import json
+import re
+import subprocess
+import sys
+from dataclasses import dataclass, asdict
+from pathlib import Path
+from typing import Any
+
+
+NAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+LINK_RE = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
+
+
+@dataclass
+class Check:
+    name: str
+    passed: bool
+    detail: str
+
+
+def parse_frontmatter(path: Path) -> tuple[dict[str, Any], str]:
+    text = path.read_text(encoding="utf-8")
+    lines = text.splitlines()
+    if len(lines) < 3 or lines[0].strip() != "---":
+        raise ValueError("SKILL.md must begin with YAML frontmatter")
+    try:
+        end = next(i for i in range(1, len(lines)) if lines[i].strip() == "---")
+    except StopIteration as exc:
+        raise ValueError("SKILL.md frontmatter is not closed") from exc
+
+    fm_lines = lines[1:end]
+    data: dict[str, Any] = {}
+    current_map: dict[str, Any] | None = None
+    for raw in fm_lines:
+        if not raw.strip() or raw.lstrip().startswith("#"):
+            continue
+        indent = len(raw) - len(raw.lstrip(" "))
+        if ":" not in raw:
+            raise ValueError(f"unsupported frontmatter line: {raw}")
+        key, value = raw.strip().split(":", 1)
+        value = value.strip()
+        if indent == 0:
+            if value == "":
+                current_map = {}
+                data[key] = current_map
+            else:
+                data[key] = value.strip('"\'')
+                current_map = None
+        else:
+            if current_map is None:
+                raise ValueError(f"unexpected nested frontmatter line: {raw}")
+            current_map[key] = value.strip('"\'')
+    body = "\n".join(lines[end + 1 :])
+    return data, body
+
+
+def local_markdown_links(root: Path) -> list[tuple[Path, str, Path]]:
+    missing: list[tuple[Path, str, Path]] = []
+    for md in root.rglob("*.md"):
+        text = md.read_text(encoding="utf-8")
+        for target in LINK_RE.findall(text):
+            target = target.split("#", 1)[0].strip()
+            if not target or "://" in target or target.startswith("mailto:"):
+                continue
+            resolved = (md.parent / target).resolve()
+            if not resolved.exists():
+                missing.append((md, target, resolved))
+    return missing
+
+
+def validate_json_files(root: Path) -> tuple[list[str], list[str]]:
+    parsed: list[str] = []
+    errors: list[str] = []
+    for path in sorted(root.rglob("*.json")):
+        try:
+            json.loads(path.read_text(encoding="utf-8"))
+            parsed.append(str(path.relative_to(root)))
+        except Exception as exc:  # noqa: BLE001 - validator should report all files
+            errors.append(f"{path.relative_to(root)}: {exc}")
+    return parsed, errors
+
+
+def validate_python_files(root: Path) -> tuple[list[str], list[str]]:
+    parsed: list[str] = []
+    errors: list[str] = []
+    for path in sorted(root.rglob("*.py")):
+        try:
+            ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
+            parsed.append(str(path.relative_to(root)))
+        except Exception as exc:  # noqa: BLE001
+            errors.append(f"{path.relative_to(root)}: {exc}")
+    return parsed, errors
+
+
+def validate_eval_definitions(root: Path) -> list[str]:
+    errors: list[str] = []
+    trigger_path = root / "evals" / "trigger_queries.json"
+    output_path = root / "evals" / "evals.json"
+
+    triggers = json.loads(trigger_path.read_text(encoding="utf-8"))
+    if not isinstance(triggers, list):
+        errors.append("trigger_queries.json must contain a list")
+    else:
+        ids: set[str] = set()
+        positives = negatives = 0
+        for idx, item in enumerate(triggers):
+            if not isinstance(item, dict):
+                errors.append(f"trigger case {idx} is not an object")
+                continue
+            case_id = item.get("id")
+            if not isinstance(case_id, str) or not case_id:
+                errors.append(f"trigger case {idx} lacks a non-empty id")
+            elif case_id in ids:
+                errors.append(f"duplicate trigger id: {case_id}")
+            else:
+                ids.add(case_id)
+            if not isinstance(item.get("query"), str) or not item["query"].strip():
+                errors.append(f"trigger case {case_id or idx} lacks a query")
+            if not isinstance(item.get("should_trigger"), bool):
+                errors.append(f"trigger case {case_id or idx} lacks Boolean should_trigger")
+            elif item["should_trigger"]:
+                positives += 1
+            else:
+                negatives += 1
+        if positives < 10 or negatives < 10:
+            errors.append(f"trigger suite needs at least 10 positive and 10 negative cases; got {positives}/{negatives}")
+
+    outputs = json.loads(output_path.read_text(encoding="utf-8"))
+    cases = outputs.get("evals") if isinstance(outputs, dict) else None
+    if not isinstance(cases, list):
+        errors.append("evals.json must contain an evals list")
+    else:
+        ids = set()
+        for idx, item in enumerate(cases):
+            if not isinstance(item, dict):
+                errors.append(f"output case {idx} is not an object")
+                continue
+            case_id = item.get("id")
+            if not isinstance(case_id, str) or not case_id:
+                errors.append(f"output case {idx} lacks a non-empty id")
+                continue
+            if case_id in ids:
+                errors.append(f"duplicate output id: {case_id}")
+            ids.add(case_id)
+            for field in ("prompt", "expected_output"):
+                if not isinstance(item.get(field), str) or not item[field].strip():
+                    errors.append(f"output case {case_id} lacks {field}")
+            assertions = item.get("assertions")
+            if not isinstance(assertions, list) or not assertions or not all(isinstance(x, str) and x.strip() for x in assertions):
+                errors.append(f"output case {case_id} needs non-empty string assertions")
+            for rel in item.get("files", []):
+                if not (root / rel).exists():
+                    errors.append(f"output case {case_id} references missing file: {rel}")
+    return errors
+
+
+def run_validator_fixture(root: Path, fixture: str, expect_success: bool) -> Check:
+    validator = root / "scripts" / "validate_partition.py"
+    fixture_path = root / "evals" / "files" / fixture
+    proc = subprocess.run(
+        [sys.executable, str(validator), str(fixture_path)],
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    passed = (proc.returncode == 0) if expect_success else (proc.returncode != 0)
+    detail = f"exit={proc.returncode}; expected {'0' if expect_success else 'non-zero'}"
+    if not passed and proc.stderr.strip():
+        detail += f"; stderr={proc.stderr.strip()}"
+    return Check(f"validator_fixture:{fixture}", passed, detail)
+
+
+def validate(root: Path) -> dict[str, Any]:
+    checks: list[Check] = []
+    skill = root / "SKILL.md"
+
+    checks.append(Check("required:SKILL.md", skill.exists(), str(skill)))
+    required_dirs = ["references", "scripts", "evals", "assets", "agents"]
+    for directory in required_dirs:
+        checks.append(Check(f"required_dir:{directory}", (root / directory).is_dir(), str(root / directory)))
+
+    try:
+        fm, _ = parse_frontmatter(skill)
+        name = str(fm.get("name", ""))
+        description = str(fm.get("description", ""))
+        metadata = fm.get("metadata") if isinstance(fm.get("metadata"), dict) else {}
+        checks.extend(
+            [
+                Check("frontmatter:name_format", bool(NAME_RE.fullmatch(name)), name),
+                Check("frontmatter:name_matches_directory", name == root.name, f"name={name}; directory={root.name}"),
+                Check("frontmatter:description_present", bool(description.strip()), f"chars={len(description)}"),
+                Check("frontmatter:description_length", len(description) <= 1024, f"chars={len(description)}"),
+                Check("frontmatter:version_present", bool(metadata.get("version")), str(metadata.get("version", ""))),
+            ]
+        )
+    except Exception as exc:  # noqa: BLE001
+        checks.append(Check("frontmatter:parse", False, str(exc)))
+
+    line_count = len(skill.read_text(encoding="utf-8").splitlines()) if skill.exists() else 0
+    checks.append(Check("SKILL.md:under_500_lines", line_count < 500, f"lines={line_count}"))
+
+    missing_links = local_markdown_links(root)
+    checks.append(
+        Check(
+            "markdown:local_links_resolve",
+            not missing_links,
+            "; ".join(f"{p.relative_to(root)} -> {target}" for p, target, _ in missing_links) or "all local links resolve",
+        )
+    )
+
+    parsed_json, json_errors = validate_json_files(root)
+    checks.append(Check("json:parse", not json_errors, f"parsed={len(parsed_json)}; errors={json_errors}"))
+
+    parsed_py, py_errors = validate_python_files(root)
+    checks.append(Check("python:syntax", not py_errors, f"parsed={len(parsed_py)}; errors={py_errors}"))
+
+    try:
+        eval_errors = validate_eval_definitions(root)
+    except Exception as exc:  # noqa: BLE001
+        eval_errors = [str(exc)]
+    checks.append(Check("evals:definitions", not eval_errors, "; ".join(eval_errors) or "valid"))
+
+    checks.append(run_validator_fixture(root, "partition-pass.json", True))
+    checks.append(run_validator_fixture(root, "partition-fail.json", False))
+    checks.append(run_validator_fixture(root, "intervals-pass.json", True))
+    checks.append(run_validator_fixture(root, "intervals-fail.json", False))
+
+    passed = all(check.passed for check in checks)
+    return {
+        "skill_root": str(root),
+        "static_validation_pass": passed,
+        "checks": [asdict(c) for c in checks],
+        "limitations": [
+            "Static validation does not measure model activation accuracy or output quality.",
+            "Runtime claims require fresh-session with-skill and without-skill evaluations in target clients.",
+        ],
+    }
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("root", nargs="?", type=Path, default=Path(__file__).resolve().parents[1])
+    parser.add_argument("--output", type=Path, help="Optional JSON report path")
+    args = parser.parse_args()
+
+    report = validate(args.root.resolve())
+    rendered = json.dumps(report, indent=2)
+    print(rendered)
+    if args.output:
+        args.output.write_text(rendered + "\n", encoding="utf-8")
+    return 0 if report["static_validation_pass"] else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+
+===== END FILE: scripts/validate_skill.py =====
+

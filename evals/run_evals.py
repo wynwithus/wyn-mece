@@ -160,7 +160,6 @@ def safe_mean(values: list[float]) -> float | None:
 
 def summarize(rows: list[dict[str, Any]]) -> dict[str, Any]:
     trigger_truth = {c["id"]: c["should_trigger"] for c in load_cases("trigger")}
-    output_counts = {c["id"]: len(c["assertions"]) for c in load_cases("output")}
     grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for row in rows:
         grouped[str(row.get("condition", "unknown"))].append(row)
@@ -170,7 +169,6 @@ def summarize(rows: list[dict[str, Any]]) -> dict[str, Any]:
         tp = tn = fp = fn = 0
         output_passes = 0
         output_total = 0
-        invalid_output_records = 0
         assertion_rates: list[float] = []
         grader_scores: list[float] = []
         durations: list[float] = []
@@ -197,17 +195,11 @@ def summarize(rows: list[dict[str, Any]]) -> dict[str, Any]:
                     fn += 1
             elif row.get("suite") == "output":
                 results = row.get("assertion_results")
-                expected_count = output_counts.get(str(row.get("case_id")))
-                if (isinstance(results, list) and expected_count is not None
-                        and len(results) == expected_count
-                        and all(isinstance(v, bool) for v in results)):
+                if isinstance(results, list) and results and all(isinstance(v, bool) for v in results):
                     output_total += 1
                     passed = all(results)
                     output_passes += int(passed)
                     assertion_rates.append(sum(results) / len(results))
-                else:
-                    invalid_output_records += 1
-                    continue
                 if isinstance(row.get("grader_score"), (int, float)):
                     grader_scores.append(float(row["grader_score"]))
 
@@ -229,7 +221,6 @@ def summarize(rows: list[dict[str, Any]]) -> dict[str, Any]:
             },
             "output": {
                 "cases_graded": output_total,
-                "invalid_records": invalid_output_records,
                 "full_assertion_passes": output_passes,
                 "pass_rate": round(output_passes / output_total, 4) if output_total else None,
                 "mean_assertion_rate": safe_mean(assertion_rates),

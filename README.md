@@ -1,83 +1,59 @@
 # WYN MECE
 
-**Find what overlaps, what is missing, and what needs a clearer rule.**
+Use WYN MECE to find gaps, overlap, double-counting, and unclear ownership in a plan or framework. It can review what you have, repair it, or build a structure from your requirements.
 
-WYN MECE is a free AI skill by [WYN](https://wynwithus.com). Bring a plan, list, framework, tracker, org model, screenshot, or diagram. It can evaluate the structure, repair it, or build one from your requirements, with clear rules and disclosed assumptions.
+MECE means mutually exclusive and collectively exhaustive. The skill checks each structure on its own terms: customer categories need one category per customer; a Definition of Done needs every required criterion satisfied; a causal model needs its interactions included.
 
-MECE means **mutually exclusive and collectively exhaustive**: the parts avoid double-counting and cover the scope you actually defined. The skill selects the right test for the structure. A customer segmentation needs exactly one category per customer; a Definition of Done needs all required criteria satisfied; a causal model needs its interactions preserved.
+## When to use it
 
-## When to summon it
+- “Is this MECE? Show the gaps, overlap, and minimum fix.”
+- “Find duplicated accountability and unowned decisions in this responsibility model.”
+- “Turn ‘launch ready’ into testable completion criteria with evidence, owners, and failure actions.”
+- “Build an issue tree for why churn increased. Separate hypotheses from evidence.”
+- “Check this workflow for missing handoffs, exceptions, and terminal states.”
+- “Recover the structure in this screenshot, flag uncertain labels, and repair it.”
 
-Use **`$wyn-mece`** when the structure affects a decision:
+Use it when completeness, exclusivity, ownership, sequencing, or acceptance rules affect the decision. Use your usual editor for tone, grammar, formatting, and visual polish.
 
-| You need to… | Try asking… |
-| --- | --- |
-| Audit a framework | “Use $wyn-mece. Is this MECE? Show the gaps, overlap, and minimum repair.” |
-| Repair mixed logic | “Use $wyn-mece to rebuild these workstreams around one clear organizing rule.” |
-| Define categories | “Use $wyn-mece to make these customer segments exhaustive, with no double-counting and explicit boundary rules.” |
-| Diagnose a problem | “Use $wyn-mece to create an issue tree for why churn increased. Separate hypotheses from evidence.” |
-| Make completion testable | “Use $wyn-mece to turn ‘launch ready’ into a Definition of Done with evidence, thresholds, owners, and failure actions.” |
-| Clarify ownership | “Use $wyn-mece to find duplicated accountability and unowned decisions in this responsibility model.” |
-| Complete a workflow | “Use $wyn-mece to find missing states, handoffs, exceptions, and terminal outcomes in this process.” |
-| Recover a diagram | “Use $wyn-mece to reconstruct this screenshot, flag uncertain labels, and repair its structure.” |
-| Prepare executive content | “Use $wyn-mece to organize this argument into an answer-first deck outline with evidence and disclosed assumptions.” |
+## Download and install
 
-You can also say **“make this MECE,” “is this MECE?”, “find the gaps and overlap,”** or **“make the acceptance criteria testable.”** An assistant that supports automatic skill selection may summon it from those requests.
+The same skill files work across tools that support the [Agent Skills format](https://agentskills.io/specification). No edits to the skill files are needed.
 
-Use ordinary editing for tone, grammar, summaries, formatting, or visual polish. Summon WYN MECE when completeness, exclusivity, sequencing, accountability, or acceptance logic matters.
+| App | Installation | How to summon it |
+| --- | --- | --- |
+| Claude | [Download wyn-mece.zip](https://github.com/wynwithus/wyn-mece/releases/latest/download/wyn-mece.zip). In Customize > Skills, choose + Create skill > Upload a skill, upload the ZIP, and enable it. | Ask Claude to use WYN MECE. |
+| Claude Code | Extract the ZIP so `SKILL.md` is at `~/.claude/skills/wyn-mece/SKILL.md`, or `.claude/skills/wyn-mece/SKILL.md` for one project. | `/wyn-mece` |
+| ChatGPT with Skills enabled | In Plugins > Skills, choose Create > Upload from your computer and upload `wyn-mece.zip`. | Select WYN MECE with `@`, or ask for it by name. |
+| Codex | Ask `$skill-installer` to install the skill from this repository's root as `wyn-mece`. Or extract the ZIP into `~/.agents/skills/`, keeping the `wyn-mece/` folder. | `$wyn-mece` |
+| Gemini CLI | Run `gemini skills install https://github.com/wynwithus/wyn-mece`. You can also download [wyn-mece.skill](https://github.com/wynwithus/wyn-mece/releases/latest/download/wyn-mece.skill) and run `gemini skills install ./wyn-mece.skill`. | Ask Gemini to use WYN MECE. Run `/skills reload` if it was added during the session. |
+| Gemini web or mobile | Create a Gem on the web. Upload [WYN-MECE.txt](https://github.com/wynwithus/wyn-mece/releases/latest/download/WYN-MECE.txt) under Knowledge. Paste [CHAT-INSTRUCTIONS.txt](CHAT-INSTRUCTIONS.txt) into Instructions and save. | Open the Gem and send your framework or request. |
+| Other assistants | Import the ZIP if the app supports Agent Skills. Otherwise, attach `WYN-MECE.txt` and send the text from `CHAT-INSTRUCTIONS.txt`. You can also paste the complete text file into a chat that has room for it. | Ask the assistant to use WYN MECE for your request. |
 
-## Install and summon
+Claude's upload format and description limit are documented in [custom skills](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills); its upload steps are in [using skills](https://support.claude.com/en/articles/12512180-use-skills-in-claude). See [Claude Code skills](https://code.claude.com/docs/en/skills) for local installation.
 
-Ask your skill-capable assistant:
+ChatGPT skill uploads depend on account and workspace access. See [Skills in ChatGPT](https://help.openai.com/en/articles/20001066-skills-in-chatgpt) and [OpenAI's skill guide](https://developers.openai.com/codex/skills/) for upload, discovery, and invocation details.
 
-> Install the wyn-mece skill from https://github.com/wynwithus/wyn-mece into my personal skills folder. Read its SKILL.md, then use it to review this framework: [paste your framework].
+Google documents [Gemini CLI installation](https://geminicli.com/docs/cli/using-agent-skills/) separately from [Gems](https://support.google.com/gemini/answer/15146780?hl=en) and [Gem knowledge files](https://support.google.com/gemini/answer/15235603?hl=en). The text file contains the skill instructions, references, templates, and scripts together, so chat users can supply them without changing the content.
 
-For a manual installation, copy this repository's complete contents into a skill folder named `wyn-mece` in the location your assistant uses for skills. Keep `SKILL.md`, `references/`, `scripts/`, `assets/`, and `agents/` together; the supporting files are part of the skill. Open a fresh session after installing if your assistant discovers skills at session start.
+Each app has its own installation controls, account restrictions, file limits, and code execution tools. The text-file option supplies the instructions in the current chat; it becomes a reusable installation only when the app saves it as a skill, Gem, or equivalent. Python helpers need Python 3.10+ and permission to run code. An app without code execution can read the instructions but cannot run those helpers.
 
-[Download the installable ZIP](https://github.com/wynwithus/wyn-mece/releases/latest/download/wyn-mece.zip). It contains a `wyn-mece/` folder with `SKILL.md` at its root. Use your assistant's skill import option if it supports this package format, or extract it into its skills directory.
+## Original skill and packaging
 
-Then ask:
+The skill body, references, templates, Python scripts, and evaluation files match WYN's original MECE 3.2.0 skill. Only the public name, discovery description, and interface metadata differ. The 178-character description fits Claude's documented 200-character limit.
 
-```text
-Use $wyn-mece to review the following framework.
-Decision: [what this needs to help us decide]
-Scope: [what is included and excluded]
-Framework: [paste content or attach a screenshot]
-```
+Package version 3.2.2 restores the original content after the first public package included functional changes. Those changes have been removed from the current release. [Source hashes](packaging/source-manifest.json) and distribution checks verify preservation.
 
-Explicit invocation syntax depends on the host. `$wyn-mece` is the Codex-style example; in another assistant, ask it to use WYN MECE or its installed skill invocation control.
+The ZIP contains one `wyn-mece/` folder with `SKILL.md` and all supporting resources. The `.skill` download is the same ZIP with the extension used by Gemini CLI. `WYN-MECE.txt` combines the source files without rewriting their contents. Build files and distribution checks stay outside the installable ZIP.
 
-## What you get
-
-- A verdict, repaired framework, or completed structure first.
-- Material gaps, overlaps, mixed organizing logic, and the smallest useful fixes.
-- Observable criteria, owners, evidence, and failure paths when the task needs execution.
-- Source-backed content separated from derivations, assumptions, and open questions.
-- Validation appropriate to the structure, with coverage claims limited to the available evidence.
-
-The skill supports taxonomies, issue trees, workflows, Definitions of Done, decision trees, ownership models, matrices, causal models, and narrative architectures. It keeps legitimate parallel work, shared contributors, and feedback loops intact.
-
-## Requirements and validation
-
-The instructions run in an assistant that can read the skill and its references. Deterministic partition and numeric-band checks use Python 3.10+ and only the standard library. The skill needs no API key or background service of its own.
-
-From this repository's root:
+To check or rebuild the package:
 
 ```bash
 python scripts/validate_skill.py .
 python evals/run_evals.py validate
+python tools/package_skill.py
 python -m unittest discover -s tests -v
 ```
 
-The package includes 24 activation cases, 18 output-quality cases, and passing/failing partition and interval fixtures. The [evaluation harness](evals/README.md) requires a target-client adapter for fresh-session model comparisons. Static checks and human/agent review do not establish measured model accuracy; see [release validation](RELEASE_VALIDATION.md) for the checks actually run.
+The original evaluation runner includes 24 activation cases and 18 output cases. It needs a client adapter to measure model behavior. [Release validation](RELEASE_VALIDATION.md) records what was checked; compatibility with the file format does not establish tested behavior in every app.
 
-## Package
-
-- [SKILL.md](SKILL.md): skill instructions and routing.
-- [references/archetypes.md](references/archetypes.md): structure-specific validity rules.
-- [references/check-catalog.md](references/check-catalog.md): applicable validation checks.
-- [references/output-contracts.md](references/output-contracts.md): deliverable formats.
-- [scripts/validate_partition.py](scripts/validate_partition.py): finite-partition and numeric-interval validator.
-- [evals/README.md](evals/README.md): evaluation definitions and adapter contract.
-
-Version **3.2.1**, based on WYN's local MECE 3.2.0 skill. Released under the [MIT License](LICENSE).
+Free from [WYN](https://wynwithus.com), under the [MIT License](LICENSE).

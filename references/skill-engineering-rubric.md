@@ -1,6 +1,6 @@
 # Skill Engineering Review Rubric
 
-This rubric evaluates the `wyn-mece` skill package itself. It is intended for authoring and release review, not routine execution.
+This rubric evaluates the `/mece` skill package itself. It is intended for authoring and release review, not routine execution.
 
 Review [platform-alignment.md](platform-alignment.md) before release scoring.
 

@@ -1,11 +1,11 @@
 ---
 name: wyn-mece
-description: Evaluate, repair, or create MECE frameworks. Use for "make this MECE", gaps, overlap, double-counting, mixed logic, unclear ownership, issue trees, taxonomies, workflows, or testable completion criteria. Skip ordinary copyediting and formatting.
+description: Find gaps, overlap, double-counting, and unclear ownership in plans and frameworks. Use for "make this MECE", issue trees, categories, workflows, or testable completion criteria.
 metadata:
   author: WynWithUs
-  version: "3.2.1"
+  version: "3.2.0"
 ---
-# WYN MECE — Framework and Materials Engineering
+# MECE Framework and Materials Engineering
 
 ## Objective
 
@@ -212,8 +212,6 @@ PASS = all critical gates pass AND readiness >= 90 AND confidence >= 90
 CONDITIONAL_PASS = all critical gates pass AND only disclosed, non-blocking assumptions remain
 FAIL = any critical gate fails or a material structural defect remains
 ```
-
-Apply verdicts in order: a failed critical gate or material defect means `FAIL`; otherwise use `PASS` only when all pass thresholds are met. Use `CONDITIONAL_PASS` only when the remaining limitations are disclosed and non-blocking. If evidence is insufficient to establish a gate, state that the gate is `NOT_ESTABLISHED` and withhold a pass verdict until it is resolved or justified as non-blocking.
 
 For routine work, use one compact applicable-check pass. For high-stakes materials, read [references/output-rubric.md](references/output-rubric.md) and run the Minto and MECE-operational graders.
 

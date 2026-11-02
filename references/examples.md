@@ -94,16 +94,16 @@ Interaction terms are tested separately, such as whether a price change dispropo
 ## Example 4 — Four-question clarification batch with defaults
 
 ```markdown
-1. **Decision:** Should this diagnose causes, assign ownership, or govern execution?
+1. **Decision:** Should this diagnose causes, assign ownership, or govern execution?  
    Default: diagnose causes, because the request asks “why.”
 
-2. **Scope:** Does “growth” include acquisition, expansion, and retention?
+2. **Scope:** Does “growth” include acquisition, expansion, and retention?  
    Default: yes, all three, because no narrower boundary is stated.
 
-3. **Atomic unit:** Should one leaf represent a causal driver or an initiative?
+3. **Atomic unit:** Should one leaf represent a causal driver or an initiative?  
    Default: causal driver; initiatives should follow after diagnosis.
 
-4. **Deliverable:** Should the approved logic become a six-slide leadership deck?
+4. **Deliverable:** Should the approved logic become a six-slide leadership deck?  
    Default: yes, with one governing thought, three key-line slides, one action slide, and one appendix/assumptions slide.
 ```
 

@@ -1,0 +1,42 @@
+{
+  "source_skill_name": "mece",
+  "source_skill_version": "3.2.0",
+  "package_name": "wyn-mece",
+  "package_version": "3.2.2",
+  "permitted_differences": [
+    "SKILL.md frontmatter.name",
+    "SKILL.md frontmatter.description",
+    "agents/openai.yaml display name, short description, and invocation example"
+  ],
+  "normalization": "Text SHA-256 values use UTF-8 and LF newlines; image values use original bytes.",
+  "source_body_sha256": "172b84cc4e27898d08f5f607e8881284deff9071a716f0bcb511384801360b18",
+  "preserved_frontmatter": "\nmetadata:\n  author: WynWithUs\n  version: \"3.2.0\"",
+  "original_files_sha256": {
+    "CHANGELOG.md": "11fe8a67f5ef3ed5742c1554991555cdfcb866d70ade5d559ff62d339ddea951",
+    "assets/artifact-handoff.yaml": "920532d3153354b26d55fe76ac95e8eec3f407b2d00af349bf809cf51a1750cf",
+    "assets/coverage-ledger.md": "e2f5a27737940c229d6de6e4131dc6c29a3fce47a1484d5ae5e9b94debc612ae",
+    "evals/evals.json": "c58b34c664475a88375bb0ed436e6b5a9c278257d49e93b097f2d22f534b46ef",
+    "evals/README.md": "7571a25753fbe8796c63548126d60f60f836c76f35d8b54012803e31f7759527",
+    "evals/results-schema.json": "f4edac3def2fd3b479600da029a3a4e93128d91673101fa1137adb5914bb36ce",
+    "evals/run_evals.py": "8936234cf797568b57829f096c539f2191d7be645b2b05dd1f183f5995571c4f",
+    "evals/trigger_queries.json": "e31227f27b0721906b74eb4cbdfd8dee030cc65dc49f0f6312e6599f328f2ff5",
+    "references/archetypes.md": "e9f05dee550a7ad48cd2ec8105866e6dc4afe638241ba4d9892b4fe772e5c372",
+    "references/check-catalog.md": "c421016cbe632358083c8a8dbb1cd200d512aae7660f8a813599d5defef4249b",
+    "references/construction-patterns.md": "842cf88dff935b5fb7a25c260264056e043249a6003fa587b18eadb3f04d35fa",
+    "references/examples.md": "4798e0413f4179bbe68817f04a83ab6cb1fbfdc5fc034b7e89121251420f102e",
+    "references/intake-and-screenshot.md": "e94305e890e42e7612ed047ae4ef97038f50fe2eb222fa482679f06f851a8d1f",
+    "references/output-contracts.md": "30ecb3a002af818bd71a8b407b01d6b23e6ec30635603db5fedf4c3de2e50471",
+    "references/output-rubric.md": "6cdd28d4763ad5f6aa3974aa56bd468ec4599b4b0e20e1f60d7f8ff5431ec7b1",
+    "references/platform-alignment.md": "dda5661f098964b3210f2ca9419da9bc0de7f098dc9bfb783e2b2af6f0a7941a",
+    "references/skill-engineering-rubric.md": "af5342f67f3494a44397ec392c3c02d983d769265924d65689dd11ff46edbe70",
+    "scripts/validate_partition.py": "3302866f577a4307c2c7820e111f894575da8ebed962b403953ccd074521d8a5",
+    "scripts/validate_skill.py": "0a1420284b3d0c992135cc163890a3390b9e57cd846ed4ee23dcd31885d4449e",
+    "evals/files/intervals-fail.json": "b74460a38ce2591a53fa3259d91f25d0767a4290e27685d48361fc82a670d8c8",
+    "evals/files/intervals-pass.json": "5ae790f8ee2a846e98a3d9c1c7a0b043a9d3344899069f34c42c70a6d2e34aa0",
+    "evals/files/mixed-framework.png": "343c7ddf0f70e5e6fa4142d251a307175c033a27ea70f1a9018a15013c0c36da",
+    "evals/files/partition-fail-result.json": "f22e8b465833a023658e92f49a469de6214224fb10c3a0397a0ecf65d760fd1e",
+    "evals/files/partition-fail.json": "75f5ff67e850bf08e6a275385d9b67c27be04c22c7b825b980a3b68c5e8b8756",
+    "evals/files/partition-pass-result.json": "868140c2d03b9e37877d2b2a0feb7d2fb97b38f3573b315602bbb170a8bda0e1",
+    "evals/files/partition-pass.json": "139b68d0b46f49b2a3f98d44b61a70ef63ba1241c1822da156cb4f6833637b5c"
+  }
+}

@@ -23,7 +23,7 @@ Use an adapter executable for the target ChatGPT/Codex or Claude environment. Th
     "suite": "trigger",
     "id": "explicit-make-mece",
     "query": "...",
-    "skill_path": "/absolute/path/to/wyn-mece"
+    "skill_path": "/absolute/path/to/mece"
   }
 }
 ```
@@ -53,8 +53,6 @@ For an output case, return blinded assertion grades in the same order as the cas
 }
 ```
 
-The adapter receives the full evaluation record for orchestration. Keep `should_trigger`, `expected_output`, and `assertions` hidden from the task-performing model. Give that model only the user query or prompt, supplied source files, and the skill when the condition allows it. Give assertion text and expected outputs only to a separate grader after the response is frozen. A trigger run must exercise discovery rather than preloading the full skill simply because its path is present.
-
 The adapter controls whether the skill is loaded. Honor `condition` exactly. Run every case in a fresh session and keep graders blind to condition where practical.
 
 ## Run and compare
@@ -81,5 +79,3 @@ python evals/run_evals.py summarize \
 The summary reports trigger precision, recall, and accuracy; full-assertion output pass rate; mean assertion rate; optional grader score; latency; and with-skill minus without-skill deltas.
 
 No empirical results are bundled. Populate them only from actual target-client runs.
-
-The summarizer reports malformed or incomplete assertion lists as `invalid_records`; they do not count as graded cases or full passes. Compare matched case sets and inspect invalid records and adapter failures before interpreting a benchmark delta.

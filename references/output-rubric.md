@@ -122,8 +122,6 @@ FAIL =
   OR a material structural or operational defect remains
 ```
 
-Apply verdicts in order: a failed critical gate or material defect means `FAIL`; otherwise use `PASS` only when all pass thresholds are met. Use `CONDITIONAL_PASS` only when the remaining limitations are disclosed and non-blocking. If evidence is insufficient to establish a gate, state that the gate is `NOT_ESTABLISHED` and withhold a pass verdict until it is resolved or justified as non-blocking.
-
 Do not call a weighted pass percentage “confidence.” Do not average readiness and confidence.
 
 ## Repair and stopping protocol

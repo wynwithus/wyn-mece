@@ -26,7 +26,6 @@ import argparse
 import json
 import sys
 from collections import Counter, defaultdict
-from decimal import Decimal
 from pathlib import Path
 from typing import Any
 
@@ -56,17 +55,6 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def reject_nonfinite(value: str) -> None:
-    raise ValueError(f"Non-finite JSON number {value!r}; use null for an unbounded endpoint.")
-
-
-def exact_number(value: int | float | Decimal) -> Decimal:
-    number = Decimal(str(value))
-    if not number.is_finite():
-        raise ValueError("Numeric endpoints and values must be finite; use null for unbounded endpoints.")
-    return number
-
-
 def load_payload(path: Path) -> dict[str, Any]:
     try:
         raw = path.read_text(encoding="utf-8")
@@ -74,7 +62,7 @@ def load_payload(path: Path) -> dict[str, Any]:
         raise ValueError(f"Cannot read input file '{path}': {exc}") from exc
 
     try:
-        payload = json.loads(raw, parse_float=Decimal, parse_constant=reject_nonfinite)
+        payload = json.loads(raw)
     except json.JSONDecodeError as exc:
         raise ValueError(
             f"Invalid JSON in '{path}' at line {exc.lineno}, column {exc.colno}: {exc.msg}"
@@ -193,14 +181,14 @@ def validate_partition(
 class Band:
     """A one-dimensional interval with explicit endpoint inclusivity."""
 
-    def __init__(self, name: str, lo: Decimal | float, lo_inc: bool, hi: Decimal | float, hi_inc: bool):
+    def __init__(self, name: str, lo: float, lo_inc: bool, hi: float, hi_inc: bool):
         self.name = name
         self.lo = lo
         self.lo_inc = lo_inc
         self.hi = hi
         self.hi_inc = hi_inc
 
-    def contains(self, value: Decimal | float) -> bool:
+    def contains(self, value: float) -> bool:
         above = value > self.lo or (value == self.lo and self.lo_inc)
         below = value < self.hi or (value == self.hi and self.hi_inc)
         return above and below
@@ -213,15 +201,15 @@ class Band:
         return f"{left}{lo}, {hi}{right}"
 
 
-def format_number(value: Decimal | float) -> str:
+def format_number(value: float) -> str:
     if value == int(value):
         return str(int(value))
-    return str(value)
+    return repr(value)
 
 
 def parse_endpoint(
     band: dict[str, Any], key: str, band_name: str, infinite: float
-) -> tuple[Decimal | float, bool, list[str]]:
+) -> tuple[float, bool, list[str]]:
     """Return value, inclusivity, and validation problems for one endpoint."""
     problems: list[str] = []
     sentinel = object()
@@ -236,7 +224,7 @@ def parse_endpoint(
                 f"Band '{band_name}' sets '{inc_key}' on an unbounded endpoint; remove it."
             )
         return infinite, False, problems
-    if not isinstance(raw, (int, float, Decimal)) or isinstance(raw, bool):
+    if not isinstance(raw, (int, float)) or isinstance(raw, bool):
         problems.append(f"Band '{band_name}' has a non-numeric '{key}'.")
         return infinite, False, problems
     if inc_key not in band or not isinstance(band[inc_key], bool):
@@ -244,8 +232,8 @@ def parse_endpoint(
             f"Band '{band_name}' has a finite '{key}' without an explicit boolean "
             f"'{inc_key}'."
         )
-        return exact_number(raw), False, problems
-    return exact_number(raw), band[inc_key], problems
+        return float(raw), False, problems
+    return float(raw), band[inc_key], problems
 
 
 def bands_overlap(a: Band, b: Band) -> str | None:
@@ -319,14 +307,14 @@ def validate_intervals(spec: dict[str, Any]) -> dict[str, Any]:
     for key in ("min", "max"):
         value = raw_domain[key]
         if value is not None and (
-            not isinstance(value, (int, float, Decimal)) or isinstance(value, bool)
+            not isinstance(value, (int, float)) or isinstance(value, bool)
         ):
             raise ValueError(f"'intervals.domain.{key}' must be a number or null.")
     domain = Band(
         "domain",
-        NEG_INF if raw_domain["min"] is None else exact_number(raw_domain["min"]),
+        NEG_INF if raw_domain["min"] is None else float(raw_domain["min"]),
         raw_domain["min"] is not None,
-        POS_INF if raw_domain["max"] is None else exact_number(raw_domain["max"]),
+        POS_INF if raw_domain["max"] is None else float(raw_domain["max"]),
         raw_domain["max"] is not None,
     )
     if domain.lo > domain.hi:
@@ -396,9 +384,6 @@ def validate_intervals(spec: dict[str, Any]) -> dict[str, Any]:
             "'intervals.missing_data_category' must be a non-empty string when present."
         )
 
-    if missing_category in seen_names:
-        malformed.append("The missing-data category must be distinct from every numeric band name.")
-
     assignments: dict[str, list[str]] = {}
     null_values: list[str] = []
     values_outside_domain: list[str] = []
@@ -408,9 +393,9 @@ def validate_intervals(spec: dict[str, Any]) -> dict[str, Any]:
             null_values.append(item)
             assignments[item] = [missing_category] if missing_category else []
             continue
-        if not isinstance(value, (int, float, Decimal)) or isinstance(value, bool):
+        if not isinstance(value, (int, float)) or isinstance(value, bool):
             raise ValueError(f"'intervals.values[{item!r}]' must be a number or null.")
-        numeric_value = exact_number(value)
+        numeric_value = float(value)
         if not domain.contains(numeric_value):
             values_outside_domain.append(item)
         assignments[item] = sorted(

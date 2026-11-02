@@ -1,16 +1,5 @@
 # Changelog
 
-## 3.2.1 — Public WYN release
-
-- Published as `wyn-mece` with WYN interface metadata and a shorter discovery description.
-- Added public installation instructions, summon examples, and an MIT license consistent with WYN Clarify.
-- Excluded local caches, discarded files, and historical review scores from the public package.
-- Fixed numeric-interval validation to preserve large integers and decimal boundaries and reject non-finite input.
-- Rejected missing-data category names that collide with numeric bands.
-- Tightened negative-fixture checks and excluded incomplete assertion lists from evaluation pass counts.
-- Clarified verdict precedence and adapter separation of task inputs from grading answers.
-- Revalidated package structure, references, evaluation definitions, and deterministic fixtures for this release.
-
 ## 3.2.0
 
 ### Definitions and construction

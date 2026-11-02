@@ -1,47 +1,25 @@
-# WYN MECE 3.2.1 — Release Validation
+# WYN MECE package 3.2.2
 
-Review date: November 1, 2026.
+Checked November 1, 2026. Source skill version: 3.2.0.
 
-This release packages WYN's local MECE 3.2.0 skill as the public `wyn-mece` skill. The original local skill was preserved.
+## Content preservation
 
-## Review outcome
+The prior public package, 3.2.1, changed a verdict rule, numeric validation, evaluation checks, and some reference text. Package 3.2.2 restores the original source. These functional changes are absent from the current release.
 
-The core archetype rules are coherent: exact-one membership applies to bounded partitions and exclusive decision branches, while completion criteria remain conjunctive and causal models preserve interactions.
+The source manifest records the original instruction-body hash, preserved frontmatter, and hashes for the original supporting files. Text comparison ignores only LF versus CRLF line endings. The distribution tests check those hashes. The permitted differences are the `wyn-mece` public name, discovery description, and UI metadata. The original version, 3.2.0, remains in SKILL.md.
 
-The publication review found and corrected these concrete defects:
+## Distribution checks
 
-- Numeric interval checks rounded large integers and close decimal endpoints to binary floats, which could conceal a real gap. JSON decimals now retain decimal precision and numeric comparisons preserve their values.
-- Missing-data routing could reuse a numeric category name. Such collisions now fail validation.
-- Negative fixtures could pass when the validator crashed or rejected the input. They now require exit code `1`, a parsed failure report, and their expected gap and overlap evidence.
-- Incomplete assertion lists could count as full evaluation passes. They now appear as invalid records and are excluded from graded cases.
-- Verdict selection needed explicit precedence, and the adapter contract needed an explicit boundary between task inputs and grader-only answers. Both are now documented.
+- Skill metadata and relative links pass the bundled package validator.
+- Original evaluation definitions parse: 24 activation cases and 18 output cases.
+- Seven distribution tests check source preservation, the 200-character description limit, complete text export, ZIP contents, extracted references, and identical ZIP/.skill content.
+- ZIP entries use one `wyn-mece/` root with no caches or discarded files.
+- The plain-text export includes the full skill, references, templates, and Python source without content edits.
 
-The package also received consistent `wyn-mece` naming, WYN interface metadata, installation instructions, summon examples, and an MIT license matching WYN Clarify's public licensing convention.
+The source scripts are preserved as requested. This release makes no claim that their behavior was improved. The previous nine regression tests for functional changes were replaced with distribution and preservation tests.
 
-## Checks run for this release
+## Platform review
 
-| Check | Result |
-| --- | --- |
-| Bundled skill-creator frontmatter validation | Pass |
-| Package structure and skill/directory naming | Pass |
-| Local Markdown links, JSON parsing, Python syntax | Pass |
-| Evaluation definitions: 12 positive and 12 negative activation cases, 18 output cases | Pass |
-| Passing and failing finite-partition fixtures | Correct exit and report behavior |
-| Passing and failing numeric-interval fixtures | Correct exit and report behavior |
-| Regression suite | 9 tests passed |
-| Publication scan | No credentials or personal local paths found in published text |
+The README links to the official installation instructions for Claude, Claude Code, ChatGPT, Codex, Gemini CLI, and Gemini Gems. Native skill hosts share the Agent Skills directory layout. Gemini's web app uses a Gem with instructions and a knowledge file, supplied as ready-to-use text.
 
-The regression suite covers large integer gaps, close decimal boundaries, missing-data name collisions, non-finite input, exact boundary routing, invalid negative-fixture results, and complete versus incomplete assertion grades.
-
-## Behavioral smoke checks
-
-A separate reviewing agent used the candidate skill on two requests:
-
-1. **Customer-size segmentation:** identified an overlap at exactly 100, proposed the minimum boundary repair, and verified the repaired numeric partition with the bundled validator.
-2. **Launch Definition of Done:** converted three vague requirements into observable conjunctive criteria, labeled proposed thresholds and owners as assumptions, and withheld actual readiness until evidence exists.
-
-Both checks produced the intended structural behavior. These are narrow smoke checks, not measured activation accuracy or a with-skill versus without-skill comparison.
-
-## Limits
-
-No target-client benchmark adapter was run. No empirical model accuracy, latency improvement, or output-quality delta is claimed. Reviewer judgments and static tests do not establish reliability across every assistant or model. The evaluation harness and cases are included for those future measurements; see [evals/README.md](evals/README.md).
+No authenticated installation was performed in Claude, Gemini, or ChatGPT. No claim of tested model behavior or universal native importing is made. Account access, file limits, and execution tools remain properties of each host. The standalone text export provides a path for chat apps that can read the complete file.
