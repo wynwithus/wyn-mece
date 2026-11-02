@@ -12,7 +12,7 @@ RESOURCE_DIRS = ("agents", "assets", "evals", "references", "scripts")
 
 
 def skill_files():
-    files = [ROOT / "SKILL.md", ROOT / "LICENSE", ROOT / "TERMS.md", ROOT / "CHANGELOG.md"]
+    files = [ROOT / "SKILL.md", ROOT / "INSTALL.md", ROOT / "LICENSE", ROOT / "TERMS.md", ROOT / "CHANGELOG.md"]
     for directory in RESOURCE_DIRS:
         files.extend(path for path in (ROOT / directory).rglob("*")
                      if path.is_file() and "__pycache__" not in path.parts
