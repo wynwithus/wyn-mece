@@ -5,7 +5,7 @@ Use the SKILL.md instructions below for my requests in this conversation. The re
 ===== FILE: SKILL.md =====
 ---
 name: wyn-mece
-description: Find gaps, overlap, double-counting, and unclear ownership in plans and frameworks. Use for "make this MECE", issue trees, categories, workflows, or testable completion criteria.
+description: Make a plan easier to follow. Find missing steps, combine repeated tasks, and spell out who does what. Try it on a checklist, a business plan, or an answer from ChatGPT.
 metadata:
   author: WynWithUs
   version: "3.2.0"

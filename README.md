@@ -1,19 +1,15 @@
 # WYN MECE
 
-Use WYN MECE to find gaps, overlap, double-counting, and unclear ownership in a plan or framework. It can review what you have, repair it, or build a structure from your requirements.
-
-MECE means mutually exclusive and collectively exhaustive. The skill checks each structure on its own terms: customer categories need one category per customer; a Definition of Done needs every required criterion satisfied; a causal model needs its interactions included.
+Paste in a checklist, a plan, or an answer from ChatGPT. WYN MECE helps you find missing steps, combine repeated tasks, and make it clear who does what. Try it for a move, a family event, or a small-business project.
 
 ## When to use it
 
-- “Is this MECE? Show the gaps, overlap, and minimum fix.”
-- “Find duplicated accountability and unowned decisions in this responsibility model.”
-- “Turn ‘launch ready’ into testable completion criteria with evidence, owners, and failure actions.”
-- “Build an issue tree for why churn increased. Separate hypotheses from evidence.”
-- “Check this workflow for missing handoffs, exceptions, and terminal states.”
-- “Recover the structure in this screenshot, flag uncertain labels, and repair it.”
+- “Check my moving list. What have I forgotten, and what have I listed twice?”
+- “Help me turn these ideas for a family party into a plan. Who needs to do what?”
+- “ChatGPT gave me this marketing plan. Make it easier to follow and tell me what I need to do first.”
+- “Check this project plan. Is anything missing, and how will we know each step is finished?”
 
-Use it when completeness, exclusivity, ownership, sequencing, or acceptance rules affect the decision. Use your usual editor for tone, grammar, formatting, and visual polish.
+Copy the instructions into your AI chat, then add the plan or answer you want help with.
 
 ## Download and install
 
@@ -39,11 +35,13 @@ Each app has its own installation controls, account restrictions, file limits, a
 
 ## Original skill and packaging
 
-The skill body, references, templates, Python scripts, and evaluation files match WYN's original MECE 3.2.0 skill. Only the public name, discovery description, and interface metadata differ. The 178-character description fits Claude's documented 200-character limit.
+The skill body, references, templates, Python scripts, and evaluation files match WYN's original MECE 3.2.0 skill. Only the public name, discovery description, and interface metadata differ. The 169-character description fits Claude's documented 200-character limit.
 
 Package version 3.2.2 restores the original content after the first public package included functional changes. Those changes have been removed from the current release. [Source hashes](packaging/source-manifest.json) and distribution checks verify preservation.
 
 The ZIP contains one `wyn-mece/` folder with `SKILL.md` and all supporting resources. The `.skill` download is the same ZIP with the extension used by Gemini CLI. `WYN-MECE.txt` combines the source files without rewriting their contents. Build files and distribution checks stay outside the installable ZIP.
+
+Package 3.2.3 updates the descriptions and examples for people who are new to AI skills. The skill instructions and supporting files are unchanged.
 
 To check or rebuild the package:
 

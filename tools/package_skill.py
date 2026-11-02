@@ -7,7 +7,7 @@ import zipfile
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PACKAGE_VERSION = "3.2.2"
+PACKAGE_VERSION = "3.2.3"
 RESOURCE_DIRS = ("agents", "assets", "evals", "references", "scripts")
 
 

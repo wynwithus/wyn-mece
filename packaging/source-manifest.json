@@ -2,7 +2,7 @@
   "source_skill_name": "mece",
   "source_skill_version": "3.2.0",
   "package_name": "wyn-mece",
-  "package_version": "3.2.2",
+  "package_version": "3.2.3",
   "permitted_differences": [
     "SKILL.md frontmatter.name",
     "SKILL.md frontmatter.description",

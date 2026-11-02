@@ -1,4 +1,8 @@
-# WYN MECE package 3.2.2
+# WYN MECE package 3.2.3
+
+Description update checked November 1, 2026. The description and public examples now explain the skill in everyday language. The original instruction-body and supporting-file preservation checks still apply.
+
+# WYN MECE package 3.2.2 review record
 
 Checked November 1, 2026. Source skill version: 3.2.0.
 

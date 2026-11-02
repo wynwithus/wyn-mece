@@ -1,6 +1,6 @@
 interface:
   display_name: "WYN MECE"
-  short_description: "Find gaps and overlap in plans and frameworks"
-  default_prompt: "Use $wyn-mece to review this framework."
+  short_description: "Make plans easier to follow and spot missing steps"
+  default_prompt: "Use $wyn-mece to help me turn this plan into clear next steps."
 policy:
   allow_implicit_invocation: true
