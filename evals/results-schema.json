@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MECE skill evaluation result",
+  "type": "object",
+  "required": ["suite", "case_id", "condition"],
+  "properties": {
+    "suite": {"enum": ["trigger", "output"]},
+    "case_id": {"type": "string", "minLength": 1},
+    "condition": {"enum": ["with_skill", "without_skill"]},
+    "activated": {"type": "boolean"},
+    "response": {"type": "string"},
+    "assertion_results": {
+      "type": "array",
+      "items": {"type": "boolean"}
+    },
+    "grader_score": {"type": "number", "minimum": 0, "maximum": 100},
+    "duration_ms": {"type": "number", "minimum": 0},
+    "input_tokens": {"type": "integer", "minimum": 0},
+    "output_tokens": {"type": "integer", "minimum": 0},
+    "adapter_error": {"type": ["string", "null"]}
+  },
+  "additionalProperties": true
+}

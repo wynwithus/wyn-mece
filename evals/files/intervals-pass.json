@@ -1,0 +1,12 @@
+{
+  "intervals": {
+    "domain": {"min": 0, "max": null},
+    "bands": [
+      {"name": "under-100k", "min": 0, "min_inclusive": true, "max": 100000, "max_inclusive": false},
+      {"name": "100k-to-under-500k", "min": 100000, "min_inclusive": true, "max": 500000, "max_inclusive": false},
+      {"name": "500k-or-more", "min": 500000, "min_inclusive": true, "max": null}
+    ],
+    "values": {"Acme": 50000, "Beta": 100000, "Coda": 250000, "Delta": null, "Echo": 1000000},
+    "missing_data_category": "arr-unknown"
+  }
+}

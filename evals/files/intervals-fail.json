@@ -1,0 +1,11 @@
+{
+  "intervals": {
+    "domain": {"min": 0, "max": null},
+    "bands": [
+      {"name": "small", "min": 0, "min_inclusive": true, "max": 100000, "max_inclusive": true},
+      {"name": "mid", "min": 100000, "min_inclusive": true, "max": 500000, "max_inclusive": false},
+      {"name": "large", "min": 500000, "min_inclusive": false, "max": null}
+    ],
+    "values": {"Beta": 100000, "Delta": null}
+  }
+}

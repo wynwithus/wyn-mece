@@ -1,0 +1,34 @@
+artifact_type: ""
+audience: ""
+decision: ""
+primary_mode: CREATE
+modifiers: []
+governing_thought: ""
+key_line:
+  - id: K1
+    statement: ""
+    order_logic: ""
+sections:
+  - id: S1
+    parent_id: null
+    title: ""
+    role: ""
+    content: []
+    evidence_ids: []
+    provenance: SOURCE
+sources:
+  - id: E1
+    location: ""
+    note: ""
+assumptions: []
+open_questions: []
+ce_status: NOT_ESTABLISHED
+validation:
+  applicable_checks_passed: 0
+  applicable_checks_total: 0
+  minto_readiness: null
+  mece_operational_readiness: null
+  critical_gates: FAIL
+  confidence: 0
+  grading_isolation: NOT_RUN
+format_constraints: []

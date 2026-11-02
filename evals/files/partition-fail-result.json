@@ -1,0 +1,39 @@
+{
+  "assigned_outside_universe": {},
+  "category_count": 3,
+  "duplicate_entries_within_category": {},
+  "duplicate_items_in_universe": [],
+  "exact_one_count": 2,
+  "exact_one_items": [
+    "Acme",
+    "Coda"
+  ],
+  "gaps": [
+    "Delta"
+  ],
+  "membership": {
+    "Acme": [
+      "small"
+    ],
+    "Beta": [
+      "small",
+      "strategic"
+    ],
+    "Coda": [
+      "strategic"
+    ],
+    "Delta": []
+  },
+  "notes": [
+    "This validator proves exact-one membership only for the supplied finite universe and assignments.",
+    "It does not prove that the supplied universe is complete or that category definitions use a sound basis of division."
+  ],
+  "overlaps": {
+    "Beta": [
+      "small",
+      "strategic"
+    ]
+  },
+  "strict_mece_pass": false,
+  "universe_size": 4
+}

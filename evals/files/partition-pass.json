@@ -1,0 +1,9 @@
+{
+  "universe": ["Acme", "Beta", "Coda", "Delta", "Echo"],
+  "categories": {
+    "under-100k": ["Acme"],
+    "100k-to-under-500k": ["Beta", "Coda"],
+    "500k-or-more": ["Echo"],
+    "arr-unknown": ["Delta"]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "universe": ["Acme", "Beta", "Coda", "Delta"],
+  "categories": {
+    "small": ["Acme", "Beta"],
+    "strategic": ["Beta", "Coda"],
+    "other": []
+  }
+}

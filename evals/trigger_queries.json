@@ -1,0 +1,122 @@
+[
+  {
+    "id": "explicit-make-mece",
+    "query": "Make this go-to-market plan MECE, remove overlap between workstreams, and turn every item into a testable Definition of Done.",
+    "should_trigger": true
+  },
+  {
+    "id": "explicit-is-mece",
+    "query": "Is this MECE? Show me the gaps, overlaps, and the minimum repair.",
+    "should_trigger": true
+  },
+  {
+    "id": "screenshot-reconstruct",
+    "query": "I uploaded a screenshot of our strategy tree. Reconstruct it, flag mixed logic, and rebuild it into an executive-ready issue tree.",
+    "should_trigger": true
+  },
+  {
+    "id": "finite-segmentation",
+    "query": "Segment these accounts so every customer lands in one and only one segment, including unknown and transitional cases.",
+    "should_trigger": true
+  },
+  {
+    "id": "pipeline-overlap",
+    "query": "Audit this sales pipeline. Opportunities can currently appear in both qualified and proposal; define exclusive stages and exit criteria.",
+    "should_trigger": true
+  },
+  {
+    "id": "board-causal-story",
+    "query": "My board wants a five-slide answer-first deck on why churn increased. Deconstruct the problem into a MECE causal story before outlining slides.",
+    "should_trigger": true
+  },
+  {
+    "id": "execution-gates",
+    "query": "Turn these launch notes into a sequenced operating plan with dependencies, owners, acceptance evidence, and failure paths.",
+    "should_trigger": true
+  },
+  {
+    "id": "duplicated-ownership",
+    "query": "Please repair this RACI. Several decisions have two accountable executives and some deliverables have no owner.",
+    "should_trigger": true
+  },
+  {
+    "id": "decision-routing",
+    "query": "Build a decision tree for routing support incidents. Every case needs one path, including missing data and timeouts.",
+    "should_trigger": true
+  },
+  {
+    "id": "mixed-basis",
+    "query": "These categories mix channels, outcomes, and tasks. Reframe them using one basis and show the coverage ledger.",
+    "should_trigger": true
+  },
+  {
+    "id": "tracker-holes",
+    "query": "Check this project tracker for holes, duplicated work, unclear gates, and items with no accountable owner. Repair it so leadership can use it.",
+    "should_trigger": true
+  },
+  {
+    "id": "boolean-standards",
+    "query": "Convert these vague completion criteria into Boolean pass/fail standards with evidence, thresholds, approvers, and waiver rules.",
+    "should_trigger": true
+  },
+  {
+    "id": "definition-only",
+    "query": "Explain the definition of MECE in two sentences.",
+    "should_trigger": false
+  },
+  {
+    "id": "alphabetize-only",
+    "query": "Please alphabetize these existing category labels without changing their meaning.",
+    "should_trigger": false
+  },
+  {
+    "id": "translation-only",
+    "query": "Translate the labels in this issue tree into Spanish. Keep the structure exactly as approved.",
+    "should_trigger": false
+  },
+  {
+    "id": "render-only",
+    "query": "Use the approved outline to format a PowerPoint. Do not change the content hierarchy.",
+    "should_trigger": false
+  },
+  {
+    "id": "screenshot-summary-only",
+    "query": "Summarize the text visible in this screenshot; no analysis or restructuring.",
+    "should_trigger": false
+  },
+  {
+    "id": "copyedit-only",
+    "query": "Make this workflow paragraph more concise and professional, but preserve every step as written.",
+    "should_trigger": false
+  },
+  {
+    "id": "lookup-only",
+    "query": "Who is accountable for pricing in this RACI table? Answer from the table only.",
+    "should_trigger": false
+  },
+  {
+    "id": "data-dedupe-only",
+    "query": "Find duplicate rows in accounts.csv and export a cleaned CSV.",
+    "should_trigger": false
+  },
+  {
+    "id": "intentional-overlap-visual",
+    "query": "Draw a Venn diagram showing overlap among product, sales, and customer success responsibilities; the overlap is intentional.",
+    "should_trigger": false
+  },
+  {
+    "id": "simple-checklist",
+    "query": "Turn my grocery notes into a simple checklist ordered by store aisle.",
+    "should_trigger": false
+  },
+  {
+    "id": "ordinary-categorization",
+    "query": "Group these book titles into fiction and nonfiction for a reading list. No audit or completeness analysis needed.",
+    "should_trigger": false
+  },
+  {
+    "id": "visual-style-only",
+    "query": "Apply consistent colors and fonts to this existing org chart without changing any boxes or reporting lines.",
+    "should_trigger": false
+  }
+]

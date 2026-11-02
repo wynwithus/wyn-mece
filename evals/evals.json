@@ -1,0 +1,221 @@
+{
+  "skill_name": "wyn-mece",
+  "evals": [
+    {
+      "id": "screenshot-mixed-basis",
+      "prompt": "Use the attached screenshot to recover the intended growth framework, identify structural defects, and rebuild it into a decision-ready MECE structure for an executive review.",
+      "expected_output": "A source-grounded reconstruction that distinguishes literal visual content from inference, identifies the mixed basis among channels, actions, and outcomes, asks only material questions if needed, and provides a repaired answer-first structure with traceability.",
+      "files": [
+        "evals/files/mixed-framework.png"
+      ],
+      "assertions": [
+        "The response identifies the input as a screenshot or visual structure and records uncertainty rather than guessing illegible content.",
+        "The response states that Channels, Improve landing page, and Revenue growth are different logical types or bases.",
+        "The rebuilt top-level siblings use one basis of division.",
+        "The response maps rebuilt elements back to visible source elements or labels them as derived or assumed.",
+        "Formal readiness scores reach 90 only when all applicable critical gates pass; confidence is reported separately."
+      ]
+    },
+    {
+      "id": "finite-customer-segmentation",
+      "prompt": "Create mutually exclusive customer segments for accounts based on annual recurring revenue: Acme 50k, Beta 100k, Coda 250k, Delta missing, Echo 1m. Use bands under 100k, 100k to under 500k, and 500k or more. Include a rule for missing ARR and prove exact-one assignment.",
+      "expected_output": "A bounded segmentation with explicit interval endpoints, a missing-data segment or routing rule, a complete assignment ledger, and an exact-one validation result.",
+      "assertions": [
+        "Every named account is assigned to exactly one segment.",
+        "The 100k and 500k boundary rules are explicit and non-overlapping.",
+        "Missing ARR is handled explicitly.",
+        "Collective exhaustiveness is labeled PROVEN only for the supplied finite account list and rules."
+      ]
+    },
+    {
+      "id": "churn-issue-tree",
+      "prompt": "Build a MECE issue tree for why subscription churn increased. Organize it for a board discussion and include a test plan for each leaf.",
+      "expected_output": "An answer-first issue tree with distinct sub-questions, consistent logical levels, explicit interaction handling, and evidence or decision rules for leaves.",
+      "assertions": [
+        "The response identifies the structure as an issue tree rather than a customer partition.",
+        "Top-level branches are logically alike and collectively answer the churn question.",
+        "The response does not claim that real customers or churn events must map to exactly one cause when causes can interact.",
+        "Cross-branch interactions or confounders are represented explicitly.",
+        "Each leaf has evidence needed or a test method."
+      ]
+    },
+    {
+      "id": "launch-workflow",
+      "prompt": "Turn these stages into an operational launch workflow: strategy, build, QA, legal review, launch, monitor. Add dependencies, owners, exit criteria, parallel work, and failure paths.",
+      "expected_output": "A state or execution workflow with entry and exit criteria, accountable ownership, parallel lanes or dependencies, and exception, retry, rollback, and terminal states.",
+      "assertions": [
+        "The output separates stages from activities and deliverables.",
+        "Every stage has an entry condition, output, and exit condition.",
+        "Legal review and QA dependencies or possible parallelism are explicit.",
+        "Failure, rollback, pause, or cancellation paths are covered.",
+        "There is one accountable owner per stage or transition where required."
+      ]
+    },
+    {
+      "id": "definition-of-done",
+      "prompt": "Repair this campaign Definition of Done: tracking works, creative is good, leads are flowing, team is aligned, landing page optimized.",
+      "expected_output": "Atomic, observable, testable completion criteria with evidence, thresholds, accountable approvers, and failure actions; no exact-one category claim.",
+      "assertions": [
+        "Each vague statement is replaced with one or more observable criteria.",
+        "Each criterion has evidence and a pass threshold.",
+        "Compound criteria are split into atomic checks.",
+        "The response treats Done as a conjunction of criteria rather than a partition.",
+        "Owners or accountable approvers and failure actions are included."
+      ]
+    },
+    {
+      "id": "raci-repair",
+      "prompt": "Audit this ownership model: Pricing is accountable to CRO and CFO; Sales enablement has Marketing and Sales as owners; Product launch has no accountable owner. Repair it without eliminating legitimate contributors.",
+      "expected_output": "A repaired responsibility model with one accountable owner per item, explicit contributors and approvers, and disclosed assumptions where the correct owner cannot be inferred.",
+      "assertions": [
+        "The response flags multiple accountable owners and the orphaned item.",
+        "The repair assigns or requests one accountable owner per decision or deliverable.",
+        "Multiple responsible or consulted contributors remain possible and explicit.",
+        "Unsupported ownership choices are labeled assumptions or open questions."
+      ]
+    },
+    {
+      "id": "causal-system-model",
+      "prompt": "Create a MECE model of the factors driving delivery delays across people, process, technology, and vendor dependencies. The factors interact and there are feedback loops.",
+      "expected_output": "A causal or system model that uses distinct factor families, models interactions and feedback explicitly, avoids pretending causes are exclusive, and labels exhaustiveness appropriately.",
+      "assertions": [
+        "The response identifies a causal or system archetype.",
+        "Main effects, interactions, and feedback loops are separated.",
+        "The response does not use an exact-one membership rule for causes.",
+        "Collective exhaustiveness is not labeled PROVEN without a bounded causal theory or source-of-truth model."
+      ]
+    },
+    {
+      "id": "material-clarification",
+      "prompt": "Make this fully MECE and turn it into materials for leadership: growth, operations, customers, technology.",
+      "expected_output": "A concise batch of high-information clarification questions with proposed defaults because the decision, unit, basis, scope, and artifact are materially ambiguous; or a clearly labeled reversible assumption set if proceeding.",
+      "assertions": [
+        "The response does not immediately force the four nouns into a final framework.",
+        "No more than four questions are asked in the initial batch.",
+        "Every question includes a proposed default or best-supported assumption.",
+        "Questions cover the decision, scope, unit or logical type, organizing axis, and artifact or evidence only where material.",
+        "Questions are specific, boundary-based, or forced-choice rather than generic requests for context."
+      ]
+    },
+    {
+      "id": "executive-deck-handoff",
+      "prompt": "Build the MECE content architecture for a six-slide executive deck on reducing customer acquisition cost. A separate slide skill will render it later.",
+      "expected_output": "A governing thought, conclusion-led key line, MECE section or slide roles, evidence mapping, assumptions, CE status, readiness and confidence kept separate, and a stable machine-readable handoff.",
+      "assertions": [
+        "The response leads with a governing thought or clearly states what evidence is needed before one can be claimed.",
+        "Slide or section titles are conclusion-led rather than generic topics.",
+        "The content architecture is validated before rendering instructions.",
+        "A structured handoff preserves hierarchy, evidence, assumptions, and validation status.",
+        "The handoff keeps readiness, critical-gate status, and confidence in separate fields."
+      ]
+    },
+    {
+      "id": "unbounded-market-taxonomy",
+      "prompt": "Create an exhaustive taxonomy of every possible reason any B2B software company could fail.",
+      "expected_output": "A bounded reframing or hypothesis taxonomy that explains why universal exhaustiveness cannot be proven, asks for scope, and labels CE as assumed, supported, or not established.",
+      "assertions": [
+        "The response challenges the unbounded universe rather than claiming universal exhaustiveness.",
+        "The response asks for or proposes scope boundaries such as company type, stage, time horizon, and failure definition.",
+        "Any provisional taxonomy is labeled as a hypothesis under assumptions.",
+        "Collective exhaustiveness is not labeled PROVEN."
+      ]
+    },
+    {
+      "id": "portfolio-matrix",
+      "prompt": "Create a portfolio matrix for initiatives using strategic value and execution feasibility. Define every axis boundary so each initiative maps to one cell, including unknown feasibility.",
+      "expected_output": "Two independently MECE axes with objective boundaries, a rule for unknowns, defined cell meanings, and an as-of rule.",
+      "assertions": [
+        "Strategic value and feasibility are treated as separate axes.",
+        "Each axis has explicit, non-overlapping boundaries.",
+        "Unknown feasibility is handled without forcing a false score.",
+        "The matrix includes an as-of date or state rule for changing initiatives."
+      ]
+    },
+    {
+      "id": "bounded-residual",
+      "prompt": "Repair this lead-source taxonomy: Paid, Organic, Partner, Other. Other currently contains 38% of leads and nobody reviews it.",
+      "expected_output": "A diagnosis that the residual is operationally invalid, a bounded replacement or decomposition, ownership and review thresholds, and an exact-one mapping rule.",
+      "assertions": [
+        "The response flags the 38% residual as a material gap in the taxonomy's usefulness.",
+        "The repair gives Other an inclusion rule and closure or reclassification process, or replaces it with defined categories.",
+        "An owner and review trigger are included.",
+        "The category rules remain mutually exclusive."
+      ]
+    },
+    {
+      "id": "routine-output-proportionality",
+      "prompt": "Is this territory list MECE: United States, North America, Europe, APAC? Give me the verdict and minimum fix.",
+      "expected_output": "A concise failure verdict that identifies the US/North America overlap, proposes one corrected basis, and avoids a visible progress checklist or unnecessary full dual-rubric ceremony.",
+      "assertions": [
+        "The response identifies the overlap between United States and North America.",
+        "The response proposes a corrected peer-level geography basis.",
+        "The verdict and minimum fix appear before detailed validation.",
+        "The response does not lead with a progress checklist or generic MECE definition.",
+        "Routine passes are compressed rather than expanded into an unnecessary full scorecard."
+      ]
+    },
+    {
+      "id": "applicability-aware-taxonomy",
+      "prompt": "Create a static taxonomy for classifying internal knowledge documents by content type. It is descriptive only and will not assign owners or control a workflow.",
+      "expected_output": "A taxonomy with defined inclusion and boundary rules that marks ownership, workflow transitions, and failure actions not applicable rather than failing the structure for omitting them.",
+      "assertions": [
+        "The response identifies a partition or taxonomy archetype.",
+        "Category rules and edge cases are explicit.",
+        "Owner assignment is not treated as universally required.",
+        "Workflow transitions and failure actions are marked not applicable or omitted without lowering the verdict.",
+        "Only applicable checks contribute to readiness."
+      ]
+    },
+    {
+      "id": "readiness-confidence-separation",
+      "prompt": "Evaluate this market-failure taxonomy. The categories are polished, but I only supplied three anecdotal examples and no bounded universe. Tell me the score and confidence.",
+      "expected_output": "Separate readiness from confidence, avoid claiming proven exhaustiveness, keep weak source and coverage confidence from being masked by polished structure, and identify the evidence needed to strengthen the result.",
+      "assertions": [
+        "The response does not call a weighted rubric pass percentage confidence.",
+        "Readiness and confidence are reported as separate concepts or fields.",
+        "Collective exhaustiveness is SUPPORTed, ASSUMED, or NOT_ESTABLISHED rather than PROVEN.",
+        "Confidence is constrained by source or coverage weakness.",
+        "The response names the minimum additional evidence or scope boundary required."
+      ]
+    },
+    {
+      "id": "mode-and-modifier-routing",
+      "prompt": "Repair the framework shown in the attached screenshot and then prepare the approved logic for a separate slide renderer.",
+      "expected_output": "Primary mode REPAIR with RECONSTRUCT and PREPARE_ARTIFACT_HANDOFF modifiers, literal visual recovery before derived repair, and a validated machine-readable handoff.",
+      "assertions": [
+        "The task is treated as a repair rather than one of several competing peer modes.",
+        "Screenshot reconstruction occurs before structural repair.",
+        "Literal source elements are separated from interpretation.",
+        "The final handoff preserves hierarchy, evidence, assumptions, CE status, readiness, and confidence.",
+        "Rendering is deferred until content architecture passes validation."
+      ],
+      "files": [
+        "evals/files/mixed-framework.png"
+      ]
+    },
+    {
+      "id": "literal-definitions-archetype-safety",
+      "prompt": "Define mutual exclusivity and collective exhaustiveness, then explain how those tests apply differently to a customer partition, a Definition of Done, and a causal system model.",
+      "expected_output": "Concise literal definitions applied locally and qualified by archetype, with exact-one reserved for the bounded partition, conjunction used for the Definition of Done, and interactions preserved in the causal model.",
+      "assertions": [
+        "Mutual exclusivity is defined as avoiding double-counting under the applicable archetype rule.",
+        "Collective exhaustiveness is defined against a stated parent and scope with honest proof strength.",
+        "ME and CE are described as independent tests.",
+        "Exact-one membership is applied to the bounded partition rather than universally.",
+        "The Definition of Done is treated as a conjunction of distinct criteria.",
+        "The causal model preserves interactions or feedback rather than claiming literal exclusive membership of causes."
+      ]
+    },
+    {
+      "id": "ordering-taxonomy",
+      "prompt": "Audit this ordering rule for MECE quality: deductive, time, structure, degree, priority, or causality. Repair the taxonomy and state when predecessor and blocker tests are required.",
+      "expected_output": "A repaired set of governing ordering relations that consolidates degree and priority under comparative rank, distinguishes chronological and causal or dependency relations, and limits predecessor or blocker tests to execution and dependency sequences.",
+      "assertions": [
+        "The response identifies degree and priority as overlapping comparative orderings.",
+        "The repair distinguishes logical implication, chronological sequence, structural arrangement, comparative rank, and causal or dependency relation.",
+        "The response requires one governing relation for a sibling set.",
+        "Predecessor and blocker tests are required only for execution or dependency sequences, not every ordered list."
+      ]
+    }
+  ]
+}
