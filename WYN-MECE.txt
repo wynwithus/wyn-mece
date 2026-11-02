@@ -6,7 +6,7 @@ Use the SKILL.md instructions below for my requests in this conversation. The re
 ---
 license: MIT (retain Nick Cybela's copyright notice; see LICENSE and TERMS.md)
 name: wyn-mece
-description: Make a plan easier to follow. Find missing steps, combine repeated tasks, and spell out who does what. Try it on a checklist, a business plan, or an answer from ChatGPT.
+description: Free skill for AI assistants to review plans and checklists. Find missing steps, combine repeated tasks, and clarify who does what.
 metadata:
   author: WynWithUs
   version: "3.2.0"

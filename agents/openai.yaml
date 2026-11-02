@@ -1,6 +1,6 @@
 interface:
   display_name: "WYN MECE"
-  short_description: "Make plans easier to follow and spot missing steps"
+  short_description: "AI skill for reviewing plans and checklists"
   default_prompt: "Use $wyn-mece to help me turn this plan into clear next steps."
 policy:
   allow_implicit_invocation: true

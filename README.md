@@ -1,6 +1,8 @@
 # WYN MECE
 
-Paste in a checklist, a plan, or an answer from ChatGPT. WYN MECE helps you find missing steps, combine repeated tasks, and make it clear who does what. Try it for a move, a family event, or a small-business project.
+Free skill for AI assistants to review plans and checklists. Find missing steps, combine repeated tasks, and clarify who does what.
+
+Try it for a move, a family event, or a small-business project.
 
 ## When to use it
 
